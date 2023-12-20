@@ -1,0 +1,5 @@
+@use "./partials/base/_globals.scss";
+@use "./partials/base/_mixins.scss";
+
+@import "./partials/components/header";
+@import "./partials/components/navbar";

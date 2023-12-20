@@ -1,0 +1,68 @@
+@use "../base/variables" as *;
+
+// .nav {
+//   &__list {
+//     display: flex;
+//     justify-content: space-around;
+//     margin-left: -60px;
+//   }
+//   &__item {
+//     list-style: none;
+//   }
+//   &__link {
+//     text-decoration: none;
+//     color: white;
+//     font-family: "Avenir";
+//     font-weight: 300;
+//     font-size: 1.2rem;
+//     margin-bottom: 0;
+//     &--active {
+//       font-weight: 700;
+//     }
+//     &--active:after {
+//       content: "";
+//       width: 100%;
+//       border-bottom: 4px solid $main-lt;
+//       position: absolute;
+//       top: 65px;
+//       right: 50%;
+//     }
+//   }
+// }
+
+.nav__list {
+  display: flex;
+  justify-content: space-around;
+  margin-left: -60px;
+}
+
+.nav__item {
+  list-style: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: white;
+  font-family: "Avenir";
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.nav__link--active {
+  font-weight: 700;
+}
+
+.nav__link--active:after {
+  content: "";
+  width: 100%;
+  border-bottom: 4px solid white;
+  position: absolute;
+  top: 115px;
+  right: 50%;
+}
+
+.pink {
+  background-color: sandybrown;
+  height: 300px;
+}
