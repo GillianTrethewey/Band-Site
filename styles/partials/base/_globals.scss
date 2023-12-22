@@ -1,15 +1,26 @@
+@use './variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
-    font-size: 16px;
-    color: #323232;
-    font-family: 'Avenir Regular', sans-serif;
+  font-size: 16px;
+  color: $main-dk;
+  font-family: "Avenir Reg", sans-serif;
+  background-color: $main-lt;
 }
 
 html {
-    width: 100%;
+  width: 100%;
 }
 
-.site-container {
-  max-width: 1280px;
+body {
   margin: 0;
 }
 
+.site-container {
+  margin: 0 1rem;
+}

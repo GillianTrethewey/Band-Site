@@ -1,0 +1,40 @@
+@use "../base/_variables.scss" as *;
+@use "../base/_mixins.scss" as *;
+@use "../base/_typography.scss" as *;
+
+.hero {
+  background-image: url("../../../assets/images/hero-bio.jpg");
+  background-size: cover;
+  height: 70vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    height: 59vw;
+  }
+
+  @include desktop {
+    height: 48vw;
+  }
+
+  &__title {
+    font-size: $fs-mob-lg;
+    font-size: 7.5vw;
+    font-family: "Avenir Demi";
+    color: $main-lt;
+    margin: 0 0 0 5vw;
+    padding: 0;
+
+    @include tablet {
+      font-size: 7.8vw;
+      margin: 0 0 0 3.1vw;
+    }
+
+    @include desktop {
+      font-size: 5vw;
+        margin: 0 0 0 6.25vw;
+    }
+  }
+}

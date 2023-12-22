@@ -1,68 +1,87 @@
-@use "../base/variables" as *;
+@use "../base/_variables.scss" as *;
+@use "../base/_mixins.scss" as *;
+@use "../base/_typography.scss" as *;
 
-// .nav {
-//   &__list {
-//     display: flex;
-//     justify-content: space-around;
-//     margin-left: -60px;
-//   }
-//   &__item {
-//     list-style: none;
-//   }
-//   &__link {
-//     text-decoration: none;
-//     color: white;
-//     font-family: "Avenir";
-//     font-weight: 300;
-//     font-size: 1.2rem;
-//     margin-bottom: 0;
-//     &--active {
-//       font-weight: 700;
-//     }
-//     &--active:after {
-//       content: "";
-//       width: 100%;
-//       border-bottom: 4px solid $main-lt;
-//       position: absolute;
-//       top: 65px;
-//       right: 50%;
-//     }
-//   }
-// }
-
-.nav__list {
-  display: flex;
-  justify-content: space-around;
-  margin-left: -60px;
-}
-
-.nav__item {
-  list-style: none;
-}
-
-.nav__link {
-  text-decoration: none;
-  color: white;
-  font-family: "Avenir";
-  font-weight: 300;
-  font-size: 1.2rem;
-  margin-bottom: 0;
-}
-
-.nav__link--active {
-  font-weight: 700;
-}
-
-.nav__link--active:after {
-  content: "";
+.nav {
   width: 100%;
-  border-bottom: 4px solid white;
-  position: absolute;
-  top: 115px;
-  right: 50%;
+
+  @include tablet {
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    margin-left: -3.75rem;
+    margin-top: 0.5rem;
+
+    @include tablet {
+      margin-left: 0;
+      width: 15.625rem;
+    }
+
+    @include desktop {
+      width: 12.5rem;
+    }
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $sec-med;
+    font-family: "Avenir Reg";
+    font-size: $fs-med;
+
+    @include tablet {
+      border-bottom: 3px solid transparent;
+    }
+
+    &:hover {
+      color: $main-lt;
+      @include tablet {
+        border-bottom: 3px solid $main-lt;
+        padding: 2rem 0;
+      }
+
+      &:after {
+        content: "";
+        width: 100%;
+        border-bottom: 4px solid $main-lt;
+        position: absolute;
+        top: 5.1rem;
+        right: 0;
+
+        @include tablet {
+          width: 0;
+        }
+      }}
+
+    &--active {
+      font-family: "Avenir Demi";
+      text-decoration: none;
+
+      @include tablet {
+        border-bottom: 3px solid $main-lt;
+        padding: 2rem 0;
+      }
+    }
+
+    &--active:after{
+      content: "";
+      width: 100%;
+      border-bottom: 3px solid $main-lt;
+      position: absolute;
+      top: 5rem;
+      right: 50%;
+
+      @include tablet {
+        width: 0;
+      }
+    }
+  }
 }
 
-.pink {
-  background-color: sandybrown;
-  height: 300px;
-}
+      
+

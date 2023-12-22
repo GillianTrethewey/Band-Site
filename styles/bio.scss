@@ -1,5 +1,8 @@
 @use "./partials/base/_globals.scss";
 @use "./partials/base/_mixins.scss";
+@use "./partials/base/_typography.scss";
 
-@import "./partials/components/header";
-@import "./partials/components/navbar";
+@use "./partials/components/_header.scss";
+@use "./partials/components/_navbar.scss";
+@use "./partials/components/_hero.scss";
+@use "./partials/components/_about.scss";
