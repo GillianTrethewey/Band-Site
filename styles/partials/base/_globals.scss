@@ -7,7 +7,7 @@
 }
 
 :root {
-  font-size: 16px;
+  font-size: $fs-root;
   color: $main-dk;
   font-family: "Avenir Reg", sans-serif;
   background-color: $main-lt;
@@ -18,9 +18,6 @@ html {
 }
 
 body {
-  margin: 0;
-}
+  margin: 0 auto;
 
-.site-container {
-  margin: 0 1rem;
 }

@@ -39,24 +39,30 @@
     }
 
     &:hover {
-      color: $main-lt;
+
       @include tablet {
         border-bottom: 3px solid $main-lt;
-        padding: 2rem 0;
+        padding-bottom: 1.7rem;
+        color: $main-lt;
+      }
+
+      @include desktop {
+        padding-bottom: 2rem;
       }
 
       &:after {
         content: "";
         width: 100%;
-        border-bottom: 4px solid $main-lt;
+        border-bottom: 3px solid $main-lt;
         position: absolute;
-        top: 5.1rem;
+        top: 4.5rem;
         right: 0;
 
         @include tablet {
           width: 0;
         }
-      }}
+      }
+    }
 
     &--active {
       font-family: "Avenir Demi";
@@ -64,7 +70,11 @@
 
       @include tablet {
         border-bottom: 3px solid $main-lt;
-        padding: 2rem 0;
+        padding-bottom: 1.7rem;
+      }
+
+      @include desktop {
+        padding-bottom: 2rem;
       }
     }
 
@@ -73,7 +83,7 @@
       width: 100%;
       border-bottom: 3px solid $main-lt;
       position: absolute;
-      top: 5rem;
+      top: 4.5rem;
       right: 50%;
 
       @include tablet {

@@ -1,0 +1,14 @@
+@use "../base/_variables.scss" as *;
+@use "../base/_mixins.scss" as *;
+@use "../base/_typography.scss" as *;
+
+.gallery {
+
+&__container {
+    max-width: 80rem;
+}
+
+&__title {
+
+}
+}

@@ -3,65 +3,77 @@
 @use "../base/_typography.scss" as *;
 
 .about {
-  margin: 1.5rem;
+  margin: 1rem;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
 
   @include tablet {
-    margin-left:100px;
+    margin-left: 100px;
     margin-right: 100px;
   }
 
   @include desktop {
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 216px;
+    margin-right: 216px;
+  }
+
+  &__container {
+    max-width: 80rem;
+    
+
   }
 
   &__title {
+  
     font-size: $fs-mob-lg;
-    font-size: 7.5vw;
+    line-height: 2rem;
     font-family: "Avenir Demi";
-    margin-bottom: 1rem;
-    padding: 0;
-
+    margin: 1.5rem 0 1rem 0;
 
     @include tablet {
       font-size: 36px;
       line-height: 44px;
-      margin-left: -50px;
-      margin-bottom: 36px;
-      margin-top: 48px;
-      font-family: "Avenir Demi";
+      margin: 48px 0 36px -64px;
     }
 
     @include desktop {
-        margin-left: -70px;
+      margin-left: -76px;
     }
   }
 
   &__image {
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     margin-bottom: 1rem;
+    height: 160px;
 
     @include tablet {
-        object-fit: cover;
-        height: 40vw;
-        margin-bottom: 36px;
-    }    
-}
+      margin-bottom: 36px;
+      height: 310px;
+    }
+
+    @include desktop {
+        height: 440px;
+    }
+  }
 
   &__subheader {
     font-size: 14px;
     line-height: 22px;
-    font-family: "Avenir RDemi", sans-serif;
+    font-family: "Avenir Demi", sans-serif; 
     margin-bottom: 16px;
-    margin-top: 36px;
+    margin-top: 24px;
 
     @include tablet {
-        font-size: 28px;
-        line-height: 32px;
-        font-family: "Avenir Demi", sans-serif;
-        margin-bottom: 24px;
-        margin-top: 54px;
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 16px;
+      margin-top: 48px;
+      font-family: "Avenir Demi", sans-serif;
+    }
+
+    @include desktop {
 
     }
   }
@@ -69,26 +81,32 @@
   &__blockquote {
     margin: 0;
     padding: 0;
-    margin-bottom: 1rem;
     font-family: "Avenir Demi", sans-serif;
     line-height: 24px;
-    font-size: 13px;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
 
     @include tablet {
-        font-size: 24px;
-        line-height: 36px;
-        font-family: "Avenir Demi", sans-serif;
-    
+      font-size: 22px;
+      line-height: 30px;
     }
-}
+
+    @include desktop {
+        margin-bottom: 1rem;
+    }
+  }
 
   &__cite {
     font-family: "Avenir Demi", sans-serif;
     font-style: normal;
-    font-size: 13px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 16px;
+
     @include tablet {
-        font-size: 18px;
+      font-size: 16px;
+      line-height: 22px;
+ 
     }
   }
 
@@ -96,26 +114,42 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0;
+    margin-bottom: 36px;
+
 
     @include tablet {
-        flex-direction: row;
-
-    } 
-}
+      flex-direction: row;
+    }
+  }
 
   &__text {
     font-family: "Avenir Reg", sans-serif;
     line-height: 18px;
     font-size: 13px;
-    margin-bottom: 16px;
-    font-size: 16px;
-    line-height: 26px;
-    &:last-child {
-        @include tablet {
-            margin-left:36px;
-        }
+    letter-spacing: 0.8;
+    margin: 0;
+
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
     }
+
     @include desktop {
-        
+        font-size: 14px;
+        line-height: 22px;
     }
-  }}
+
+
+    &:last-child {
+        margin-top: 16px;
+        margin-bottom: 16px;
+
+      @include tablet {
+        margin-left: 36px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

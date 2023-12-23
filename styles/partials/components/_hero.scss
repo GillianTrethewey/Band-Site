@@ -3,38 +3,43 @@
 @use "../base/_typography.scss" as *;
 
 .hero {
-  background-image: url("../../../assets/images/hero-bio.jpg");
+  background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
-  height: 70vw;
+  box-shadow: inset 0 0 0 100vmax $main-dk-opacity;
+  height: 11.6rem;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
 
   @include tablet {
-    height: 59vw;
+    height: 455px;
   }
 
   @include desktop {
-    height: 48vw;
+
+  }
+
+  &__container {
+    max-width: 80rem;
   }
 
   &__title {
     font-size: $fs-mob-lg;
-    font-size: 7.5vw;
+    line-height: 2rem;
     font-family: "Avenir Demi";
     color: $main-lt;
-    margin: 0 0 0 5vw;
-    padding: 0;
+    margin: 0;
+    margin-left: 1rem;
 
     @include tablet {
-      font-size: 7.8vw;
-      margin: 0 0 0 3.1vw;
+      font-size: 60px;
+      line-height: 68px;
+      margin-left: 2.25rem;
     }
 
     @include desktop {
-      font-size: 5vw;
-        margin: 0 0 0 6.25vw;
+      margin-left: 124px;
     }
   }
 }

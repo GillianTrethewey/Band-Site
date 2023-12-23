@@ -16,26 +16,22 @@ html {
 }
 
 body {
-  margin: 0;
-}
-
-.site-container {
-  margin: 0 1rem;
+  margin: 0 auto;
 }
 
 @font-face {
   font-family: "Avenir Reg";
-  src: url("../../../assets/fonts/Avenir-otf/AvenirNextLTPro-Regular.otf") format("otf"), url("../../../assets/fonts/Avenir-ttf/AvenirNextLTPro-Regular.ttf") format("ttf"), url("../../../assets/fonts/Avenir-woff/AvenirNextLTPro-Regular.woff") format("woff"), url("../../../assets/fonts/Avenir-woff2/AvenirNextLTPro-Regular.woff2") format("woff2");
+  src: url("../assets/fonts/Avenir-otf/AvenirNextLTPro-Regular.otf") format("otf"), url("../assets/fonts/Avenir-ttf/AvenirNextLTPro-Regular.ttf") format("ttf"), url("../assets/fonts/Avenir-woff/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/Avenir-woff2/AvenirNextLTPro-Regular.woff2") format("woff2");
   font-weight: 300;
 }
 @font-face {
   font-family: "Avenir Demi";
-  src: url("../../../assets/fonts/Avenir-otf/AvenirNextLTPro-Demi.otf") format("otf"), url("../../../assets/fonts/Avenir-ttf/AvenirNextLTPro-Demi.ttf") format("ttf"), url("../../../assets/fonts/Avenir-woff/AvenirNextLTPro-Demi.woff") format("woff"), url("../../../assets/fonts/Avenir-woff2/AvenirNextLTPro-Demi.woff2") format("woff2");
+  src: url("../assets/fonts/Avenir-otf/AvenirNextLTPro-Demi.otf") format("otf"), url("../assets/fonts/Avenir-ttf/AvenirNextLTPro-Demi.ttf") format("ttf"), url("../assets/fonts/Avenir-woff/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/Avenir-woff2/AvenirNextLTPro-Demi.woff2") format("woff2");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir Bold";
-  src: url("../../../assets/fonts/Avenir-otf/AvenirNextLTPro-Bold.otf") format("otf"), url("../../../assets/fonts/Avenir-ttf/AvenirNextLTPro-Bold.ttf") format("ttf"), url("../../../assets/fonts/Avenir-woff/AvenirNextLTPro-Bold.woff") format("woff"), url("../../../assets/fonts/Avenir-woff2/AvenirNextLTPro-Bold.woff2") format("woff2");
+  src: url("../assets/fonts/Avenir-otf/AvenirNextLTPro-Bold.otf") format("otf"), url("../assets/fonts/Avenir-ttf/AvenirNextLTPro-Bold.ttf") format("ttf"), url("../assets/fonts/Avenir-woff/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/Avenir-woff2/AvenirNextLTPro-Bold.woff2") format("woff2");
   font-weight: 700;
 }
 .header {
@@ -43,23 +39,26 @@ body {
   width: 100%;
   z-index: 1;
 }
-.header-container {
+.header__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 5rem;
-  padding: 1.25rem;
+  height: 4.5rem;
+  padding-top: 1rem;
+  max-width: 80rem;
 }
 @media screen and (min-width: 48rem) {
-  .header-container {
+  .header__container {
+    height: 4.5rem;
     width: 50%;
     flex-direction: row;
     justify-content: space-around;
+    padding: 0;
   }
 }
 @media screen and (min-width: 80rem) {
-  .header-container {
-    width: 27.5rem;
+  .header__container {
+    height: 80px;
   }
 }
 .header__branding {
@@ -69,12 +68,12 @@ body {
 }
 @media screen and (min-width: 48rem) {
   .header__branding {
-    margin-left: 3rem;
+    margin-left: 2.25rem;
   }
 }
 @media screen and (min-width: 80rem) {
   .header__branding {
-    margin-left: 8.75rem;
+    margin-left: 124px;
   }
 }
 .header__branding-link {
@@ -121,21 +120,24 @@ body {
     border-bottom: 3px solid transparent;
   }
 }
-.nav__link:hover {
-  color: #fff;
-}
 @media screen and (min-width: 48rem) {
   .nav__link:hover {
     border-bottom: 3px solid #fff;
-    padding: 2rem 0;
+    padding-bottom: 1.7rem;
+    color: #fff;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .nav__link:hover {
+    padding-bottom: 2rem;
   }
 }
 .nav__link:hover:after {
   content: "";
   width: 100%;
-  border-bottom: 4px solid #fff;
+  border-bottom: 3px solid #fff;
   position: absolute;
-  top: 5.1rem;
+  top: 4.5rem;
   right: 0;
 }
 @media screen and (min-width: 48rem) {
@@ -150,7 +152,12 @@ body {
 @media screen and (min-width: 48rem) {
   .nav__link--active {
     border-bottom: 3px solid #fff;
-    padding: 2rem 0;
+    padding-bottom: 1.7rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .nav__link--active {
+    padding-bottom: 2rem;
   }
 }
 .nav__link--active:after {
@@ -158,7 +165,7 @@ body {
   width: 100%;
   border-bottom: 3px solid #fff;
   position: absolute;
-  top: 5rem;
+  top: 4.5rem;
   right: 50%;
 }
 @media screen and (min-width: 48rem) {
@@ -168,9 +175,10 @@ body {
 }
 
 .hero {
-  background-image: url("../../../assets/images/hero-bio.jpg");
+  background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
-  height: 70vw;
+  box-shadow: inset 0 0 0 100vmax rgba(50, 50, 50, 0.5019607843);
+  height: 11.6rem;
   margin: 0;
   padding: 0;
   display: flex;
@@ -178,37 +186,38 @@ body {
 }
 @media screen and (min-width: 48rem) {
   .hero {
-    height: 59vw;
+    height: 455px;
   }
 }
-@media screen and (min-width: 80rem) {
-  .hero {
-    height: 48vw;
-  }
+.hero__container {
+  max-width: 80rem;
 }
 .hero__title {
   font-size: 1.5rem;
-  font-size: 7.5vw;
+  line-height: 2rem;
   font-family: "Avenir Demi";
   color: #fff;
-  margin: 0 0 0 5vw;
-  padding: 0;
+  margin: 0;
+  margin-left: 1rem;
 }
 @media screen and (min-width: 48rem) {
   .hero__title {
-    font-size: 7.8vw;
-    margin: 0 0 0 3.1vw;
+    font-size: 60px;
+    line-height: 68px;
+    margin-left: 2.25rem;
   }
 }
 @media screen and (min-width: 80rem) {
   .hero__title {
-    font-size: 5vw;
-    margin: 0 0 0 6.25vw;
+    margin-left: 124px;
   }
 }
 
 .about {
-  margin: 1.5rem;
+  margin: 1rem;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (min-width: 48rem) {
   .about {
@@ -218,92 +227,103 @@ body {
 }
 @media screen and (min-width: 80rem) {
   .about {
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 216px;
+    margin-right: 216px;
   }
+}
+.about__container {
+  max-width: 80rem;
 }
 .about__title {
   font-size: 1.5rem;
-  font-size: 7.5vw;
+  line-height: 2rem;
   font-family: "Avenir Demi";
-  margin-bottom: 1rem;
-  padding: 0;
+  margin: 1.5rem 0 1rem 0;
 }
 @media screen and (min-width: 48rem) {
   .about__title {
     font-size: 36px;
     line-height: 44px;
-    margin-left: -50px;
-    margin-bottom: 36px;
-    margin-top: 48px;
-    font-family: "Avenir Demi";
+    margin: 48px 0 36px -64px;
   }
 }
 @media screen and (min-width: 80rem) {
   .about__title {
-    margin-left: -70px;
+    margin-left: -76px;
   }
 }
 .about__image {
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-bottom: 1rem;
+  height: 160px;
 }
 @media screen and (min-width: 48rem) {
   .about__image {
-    -o-object-fit: cover;
-       object-fit: cover;
-    height: 40vw;
     margin-bottom: 36px;
+    height: 310px;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .about__image {
+    height: 440px;
   }
 }
 .about__subheader {
   font-size: 14px;
   line-height: 22px;
-  font-family: "Avenir RDemi", sans-serif;
+  font-family: "Avenir Demi", sans-serif;
   margin-bottom: 16px;
-  margin-top: 36px;
+  margin-top: 24px;
 }
 @media screen and (min-width: 48rem) {
   .about__subheader {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 32px;
+    margin-bottom: 16px;
+    margin-top: 48px;
     font-family: "Avenir Demi", sans-serif;
-    margin-bottom: 24px;
-    margin-top: 54px;
   }
 }
 .about__blockquote {
   margin: 0;
   padding: 0;
-  margin-bottom: 1rem;
   font-family: "Avenir Demi", sans-serif;
   line-height: 24px;
-  font-size: 13px;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
 }
 @media screen and (min-width: 48rem) {
   .about__blockquote {
-    font-size: 24px;
-    line-height: 36px;
-    font-family: "Avenir Demi", sans-serif;
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .about__blockquote {
+    margin-bottom: 1rem;
   }
 }
 .about__cite {
   font-family: "Avenir Demi", sans-serif;
   font-style: normal;
-  font-size: 13px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 16px;
 }
 @media screen and (min-width: 48rem) {
   .about__cite {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 22px;
   }
 }
 .about__text-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0;
+  margin-bottom: 36px;
 }
 @media screen and (min-width: 48rem) {
   .about__text-container {
@@ -314,12 +334,33 @@ body {
   font-family: "Avenir Reg", sans-serif;
   line-height: 18px;
   font-size: 13px;
+  letter-spacing: 0.8;
+  margin: 0;
+}
+@media screen and (min-width: 48rem) {
+  .about__text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .about__text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+.about__text:last-child {
+  margin-top: 16px;
   margin-bottom: 16px;
-  font-size: 16px;
-  line-height: 26px;
 }
 @media screen and (min-width: 48rem) {
   .about__text:last-child {
     margin-left: 36px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
+}
+
+.gallery__container {
+  max-width: 80rem;
 }/*# sourceMappingURL=bio.css.map */
