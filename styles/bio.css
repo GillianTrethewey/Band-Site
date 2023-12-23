@@ -219,8 +219,7 @@ body {
 }
 
 .about {
-  margin: 1rem;
-  margin-top: 0;
+  margin: 0 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -328,7 +327,6 @@ body {
   flex-direction: column;
   justify-content: center;
   margin: 0;
-  margin-bottom: 2.25rem;
 }
 @media screen and (min-width: 48rem) {
   .about__text-container {
@@ -362,22 +360,103 @@ body {
 
 .gallery__container {
   max-width: 80rem;
+  background-color: #fafafa;
 }
-.gallery__title__title {
+.gallery__title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "Avenir Demi";
-  margin: 1.5rem 0 1rem 0;
+  margin: 0 0 1rem 1rem;
+  padding-top: 1.5rem;
 }
 @media screen and (min-width: 48rem) {
-  .gallery__title__title {
+  .gallery__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
     margin: 3rem 0 2.25rem -4rem;
   }
 }
 @media screen and (min-width: 80rem) {
-  .gallery__title__title {
+  .gallery__title {
     margin-left: -4.75rem;
   }
+}
+.gallery__image-group {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.gallery__image {
+  margin-bottom: 1rem;
+}
+
+.footer {
+  color: #fff;
+  background-color: #323232;
+  padding-left: 1rem;
+}
+.footer * {
+  margin: 0;
+  padding: 0;
+}
+.footer__container {
+  max-width: 80rem;
+}
+
+.socials__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "Avenir Demi";
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .socials__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    margin: 3rem 0 2.25rem -4rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .socials__title {
+    margin-left: -4.75rem;
+  }
+}
+.socials__group {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  margin-bottom: 1.5rem;
+}
+
+.contact__text--top {
+  margin-top: 1rem;
+}
+.contact__name, .contact__company, .contact__text, .contact__email {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: "Avenir Reg";
+}
+.contact__email-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer__branding {
+  margin-top: 2rem;
+}
+.footer__branding-logo {
+  height: 1.25rem;
+  width: 7.5rem;
+}
+
+.copyright__text {
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+  font-size: 0.625rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.125rem;
+  font-family: "Avenir Reg";
 }/*# sourceMappingURL=bio.css.map */

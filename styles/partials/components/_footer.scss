@@ -1,0 +1,91 @@
+@use "../base/_variables.scss" as *;
+@use "../base/_mixins.scss" as *;
+@use "../base/_typography.scss" as *;
+
+.footer {
+  color: $main-lt;
+  background-color: $main-dk;
+  padding-left: 1rem;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__container {
+    max-width: 80rem;
+  }
+}
+
+.socials {
+
+  &__title {
+    font-size: $fs-mob-lg;
+    line-height: 2rem;
+    font-family: "Avenir Demi";
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+
+    @include tablet {
+      font-size: $fs-xl;
+      line-height: $lh-xl;
+      margin: 3rem 0 2.25rem -4rem;
+    }
+
+    @include desktop {
+      margin-left: -4.75rem;
+    }
+  }
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.contact {
+  &__text--top {
+    margin-top: 1rem;
+  }
+
+  &__name,
+  &__company,
+  &__text,
+  &__email {
+    font-size: $fs-mob-sm;
+    line-height: $lh-xs;
+    font-family: "Avenir Reg";
+  }
+
+  &__email-link {
+    text-decoration: none;
+    color: $main-lt;
+  }
+}
+
+.footer__branding {
+    margin-top: 2rem;
+
+  &-logo {
+    height: 1.25rem;
+    width: 7.5rem;
+
+
+
+  }
+}
+
+
+.copyright {
+    &__text {
+        margin: 1rem 0;
+        padding-bottom: 1rem;
+        font-size: $fs-mob-xs;
+        letter-spacing: 0.025rem;
+        line-height: $lh-xs;
+        font-family: "Avenir Reg";
+    }
+}
