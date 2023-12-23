@@ -13,11 +13,11 @@
   align-items: center;
 
   @include tablet {
-    height: 455px;
+    height: 28.5rem;
   }
 
   @include desktop {
-
+    height: 39rem;
   }
 
   &__container {
@@ -33,13 +33,13 @@
     margin-left: 1rem;
 
     @include tablet {
-      font-size: 60px;
-      line-height: 68px;
+      font-size: $fs-xxl;
+      line-height: $lh-xxl;
       margin-left: 2.25rem;
     }
 
     @include desktop {
-      margin-left: 124px;
+      margin-left: 7.75rem;
     }
   }
 }
