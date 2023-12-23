@@ -362,4 +362,22 @@ body {
 
 .gallery__container {
   max-width: 80rem;
+}
+.gallery__title__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "Avenir Demi";
+  margin: 1.5rem 0 1rem 0;
+}
+@media screen and (min-width: 48rem) {
+  .gallery__title__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    margin: 3rem 0 2.25rem -4rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .gallery__title__title {
+    margin-left: -4.75rem;
+  }
 }/*# sourceMappingURL=bio.css.map */

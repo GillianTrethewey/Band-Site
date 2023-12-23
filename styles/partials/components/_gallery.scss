@@ -9,6 +9,22 @@
 }
 
 &__title {
-
+    &__title {
+  
+        font-size: $fs-mob-lg;
+        line-height: 2rem;
+        font-family: "Avenir Demi";
+        margin: 1.5rem 0 1rem 0;
+    
+        @include tablet {
+          font-size: $fs-xl;
+          line-height: $lh-xl;
+          margin: 3rem 0 2.25rem -4rem;
+        }
+    
+        @include desktop {
+          margin-left: -4.75rem;
+        }
+      }
 }
 }
