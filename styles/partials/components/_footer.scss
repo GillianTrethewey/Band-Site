@@ -7,6 +7,11 @@
   background-color: $main-dk;
   padding-left: 1rem;
 
+  @include tablet {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -14,10 +19,27 @@
 
   &__container {
     max-width: 80rem;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+
+    }
   }
 }
 
 .socials {
+    &__container {
+
+
+    @include tablet {
+        order: 0;
+        display: inline-flex;
+        width: 50%;
+        
+
+    }
+}
 
   &__title {
     font-size: $fs-mob-lg;
@@ -30,7 +52,7 @@
     @include tablet {
       font-size: $fs-xl;
       line-height: $lh-xl;
-      margin: 3rem 0 2.25rem -4rem;
+      margin: 3rem 0 2.25rem 0;
     }
 
     @include desktop {
@@ -41,12 +63,42 @@
   &__group {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 40%;
     margin-bottom: 1.5rem;
-  }
+    
+    @include tablet {
+        width: 30%;
+        margin-bottom: 0;
+        margin-top: 2.7rem;
+        margin-left: 2.25rem;    
+
+    }
+}
+
+&__icon {
+
+    @include tablet {
+        width: 110%;
+        
+        
+    }
+}
 }
 
 .contact {
+    
+    @include tablet {
+        order: 3;
+    }
+&__container {
+    display: flex;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
   &__text--top {
     margin-top: 1rem;
   }
@@ -57,7 +109,20 @@
   &__email {
     font-size: $fs-mob-sm;
     line-height: $lh-xs;
-    font-family: "Avenir Reg";
+    font-family: "Avenir Reg", sans-serif;
+
+    @include tablet {
+        font-size: $fs-med;
+        line-height: $lh-sm;
+    }
+  }
+
+  &__name,
+  &__company {
+
+    @include tablet {
+        font-family: "Avenir Demi", sans-serif;
+    }
   }
 
   &__email-link {
@@ -68,18 +133,27 @@
 
 .footer__branding {
     margin-top: 2rem;
+    
+
+    @include tablet {
+        order: 2;
+        margin-left: auto;
+        
+        
+    }
 
   &-logo {
     height: 1.25rem;
     width: 7.5rem;
-
-
-
   }
 }
 
 
 .copyright {
+
+    @include tablet {
+        order: 5;
+    }
     &__text {
         margin: 1rem 0;
         padding-bottom: 1rem;

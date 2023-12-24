@@ -225,14 +225,12 @@ body {
 }
 @media screen and (min-width: 48rem) {
   .about {
-    margin-left: 6.25rem;
-    margin-right: 6.25rem;
+    margin: 0 6.25rem;
   }
 }
 @media screen and (min-width: 80rem) {
   .about {
-    margin-left: 13.5rem;
-    margin-right: 13.5rem;
+    margin: 0 13.5rem;
   }
 }
 .about__container {
@@ -354,7 +352,7 @@ body {
   .about__text:last-child {
     margin-left: 2.25rem;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 2.25rem;
   }
 }
 
@@ -373,22 +371,32 @@ body {
   .gallery__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
-    margin: 3rem 0 2.25rem -4rem;
-  }
-}
-@media screen and (min-width: 80rem) {
-  .gallery__title {
-    margin-left: -4.75rem;
+    margin-left: 2.25rem;
+    padding-bottom: 2.25rem;
+    padding-top: 3rem;
   }
 }
 .gallery__image-group {
   display: flex;
   flex-direction: column;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 0 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .gallery__image-group {
+    margin: 0 auto 0 2.25rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 .gallery__image {
   margin-bottom: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .gallery__image {
+    width: 30%;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+  }
 }
 
 .footer {
@@ -396,14 +404,28 @@ body {
   background-color: #323232;
   padding-left: 1rem;
 }
+@media screen and (min-width: 48rem) {
+  .footer {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
 .footer * {
   margin: 0;
   padding: 0;
 }
 .footer__container {
   max-width: 80rem;
+  display: flex;
+  flex-direction: column;
 }
-
+@media screen and (min-width: 48rem) {
+  .socials__container {
+    order: 0;
+    display: inline-flex;
+    width: 50%;
+  }
+}
 .socials__title {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -416,7 +438,7 @@ body {
   .socials__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
-    margin: 3rem 0 2.25rem -4rem;
+    margin: 3rem 0 2.25rem 0;
   }
 }
 @media screen and (min-width: 80rem) {
@@ -427,17 +449,56 @@ body {
 .socials__group {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 40%;
   margin-bottom: 1.5rem;
 }
+@media screen and (min-width: 48rem) {
+  .socials__group {
+    width: 30%;
+    margin-bottom: 0;
+    margin-top: 2.7rem;
+    margin-left: 2.25rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .socials__icon {
+    width: 110%;
+  }
+}
 
+@media screen and (min-width: 48rem) {
+  .contact {
+    order: 3;
+  }
+}
+.contact__container {
+  display: flex;
+}
+@media screen and (min-width: 48rem) {
+  .contact__container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 .contact__text--top {
   margin-top: 1rem;
 }
 .contact__name, .contact__company, .contact__text, .contact__email {
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-family: "Avenir Reg";
+  font-family: "Avenir Reg", sans-serif;
+}
+@media screen and (min-width: 48rem) {
+  .contact__name, .contact__company, .contact__text, .contact__email {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .contact__name, .contact__company {
+    font-family: "Avenir Demi", sans-serif;
+  }
 }
 .contact__email-link {
   text-decoration: none;
@@ -447,11 +508,22 @@ body {
 .footer__branding {
   margin-top: 2rem;
 }
+@media screen and (min-width: 48rem) {
+  .footer__branding {
+    order: 2;
+    margin-left: auto;
+  }
+}
 .footer__branding-logo {
   height: 1.25rem;
   width: 7.5rem;
 }
 
+@media screen and (min-width: 48rem) {
+  .copyright {
+    order: 5;
+  }
+}
 .copyright__text {
   margin: 1rem 0;
   padding-bottom: 1rem;
