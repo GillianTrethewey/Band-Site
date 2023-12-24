@@ -219,18 +219,21 @@ body {
 }
 
 .about {
-  margin: 0 1rem;
+  margin: 1rem;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 48rem) {
   .about {
-    margin: 0 6.25rem;
+    margin-left: 6.25rem;
+    margin-right: 6.25rem;
   }
 }
 @media screen and (min-width: 80rem) {
   .about {
-    margin: 0 13.5rem;
+    margin-left: 13.5rem;
+    margin-right: 13.5rem;
   }
 }
 .about__container {
@@ -352,51 +355,76 @@ body {
   .about__text:last-child {
     margin-left: 2.25rem;
     margin-top: 0;
-    margin-bottom: 2.25rem;
+    margin-bottom: 0;
   }
 }
 
+.gallery {
+  background-color: #fafafa;
+  padding: 0 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .gallery {
+    padding: 0 2.25rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .gallery {
+    padding: 0 7.75rem;
+  }
+}
 .gallery__container {
   max-width: 80rem;
-  background-color: #fafafa;
 }
 .gallery__title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "Avenir Demi";
-  margin: 0 0 1rem 1rem;
   padding-top: 1.5rem;
+  margin-top: 0;
 }
 @media screen and (min-width: 48rem) {
   .gallery__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
-    margin-left: 2.25rem;
-    padding-bottom: 2.25rem;
     padding-top: 3rem;
   }
 }
 .gallery__image-group {
   display: flex;
   flex-direction: column;
-  margin: 0 1rem;
 }
-@media screen and (min-width: 48rem) {
+@media screen and (min-width: 45rem) {
   .gallery__image-group {
-    margin: 0 auto 0 2.25rem;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
   }
 }
 .gallery__image {
   margin-bottom: 1rem;
+  flex-grow: 1;
   filter: grayscale(100%);
+}
+@media screen and (min-width: 45rem) {
+  .gallery__image {
+    width: 40%;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
 }
 @media screen and (min-width: 48rem) {
   .gallery__image {
-    width: 30%;
+    width: 29.5%;
     margin-bottom: 1.5rem;
     margin-right: 1.5rem;
+  }
+  .gallery__image:nth-child(3), .gallery__image:nth-child(6), .gallery__image:nth-child(9) {
+    margin-right: 0;
   }
 }
 .gallery__image:hover {
@@ -416,9 +444,11 @@ body {
     height: 400px;
   }
 }
-.footer * {
-  margin: 0;
-  padding: 0;
+@media screen and (min-width: 80rem) {
+  .footer {
+    padding-left: 7.75rem;
+    padding-right: 7.75rem;
+  }
 }
 .footer__container {
   max-width: 80rem;
@@ -434,7 +464,7 @@ body {
 
 @media screen and (min-width: 48rem) {
   .socials {
-    width: 80%;
+    width: 35rem;
   }
 }
 .socials__container {
@@ -445,7 +475,8 @@ body {
   .socials__container {
     order: 1;
     flex-direction: row;
-    width: 65%;
+    justify-content: space-between;
+    width: 23.5rem;
   }
 }
 .socials__title {
@@ -469,7 +500,7 @@ body {
   display: flex;
   flex-direction: row;
   margin-bottom: 1.5rem;
-  width: 120px;
+  width: 7.5rem;
   justify-content: space-between;
 }
 @media screen and (min-width: 48rem) {
@@ -478,7 +509,6 @@ body {
     margin-top: 3.8rem;
     margin-left: 2.25rem;
     padding: 0;
-    width: 100px;
   }
 }
 @media screen and (min-width: 48rem) {
@@ -496,6 +526,7 @@ body {
 .contact__container {
   display: flex;
   flex-direction: column;
+  width: 680px;
 }
 @media screen and (min-width: 48rem) {
   .contact__container {
@@ -504,15 +535,13 @@ body {
     margin-top: 0;
   }
 }
-.contact__text--top {
-  margin-top: 1rem;
-}
-@media screen and (min-width: 48rem) {
-  .contact__text--top {
-    margin-top: 1.4rem;
+@media screen and (min-width: 80rem) {
+  .contact__container {
+    width: 725px;
   }
 }
 .contact__name, .contact__company, .contact__text, .contact__email {
+  margin: 0;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-family: "Avenir Reg", sans-serif;
@@ -532,6 +561,14 @@ body {
   text-decoration: none;
   color: #fff;
 }
+.contact__text--top {
+  margin-top: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .contact__text--top {
+    margin-top: 1.5rem;
+  }
+}
 
 .footer__branding {
   margin-top: 2rem;
@@ -541,6 +578,11 @@ body {
   .footer__branding {
     order: 2;
     margin: auto;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .footer__branding {
+    margin-right: 0;
   }
 }
 .footer__branding-logo {
@@ -565,6 +607,6 @@ body {
   .copyright__text {
     font-size: 0.875rem;
     line-height: 1.25rem;
-    margin-top: 3rem;
+    margin: 2.75rem 0;
   }
 }/*# sourceMappingURL=bio.css.map */

@@ -1,14 +1,21 @@
+$gallery-mid-breakpoint: 45rem;
 $tablet-breakpoint: 48rem;
 $desktop-breakpoint: 80rem;
 
+@mixin mid-gallery {
+  @media screen and (min-width: $gallery-mid-breakpoint) {
+    @content;
+  }
+}
+
 @mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
-        @content;
-    }
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
-        @content;
-    }
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
 }
