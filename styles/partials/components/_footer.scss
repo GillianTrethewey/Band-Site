@@ -21,25 +21,32 @@
     max-width: 80rem;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    
 
     @include tablet {
-
+        flex-direction: row;
+        
     }
   }
 }
 
 .socials {
-    &__container {
-
 
     @include tablet {
-        order: 0;
-        display: inline-flex;
-        width: 50%;
-        
+        width: 80%;
+    }
+  &__container { // has title and group of socials
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      order: 1;
+      flex-direction: row;
+      width: 60%
 
     }
-}
+  }
 
   &__title {
     font-size: $fs-mob-lg;
@@ -52,53 +59,57 @@
     @include tablet {
       font-size: $fs-xl;
       line-height: $lh-xl;
-      margin: 3rem 0 2.25rem 0;
+      //margin: 3rem 0 2.25rem 0;
+      justify-content: space-around;
+      padding: 0;
     }
 
     @include desktop {
-      margin-left: -4.75rem;
+
     }
   }
 
   &__group {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 40%;
+    flex-direction: row;
     margin-bottom: 1.5rem;
-    
-    @include tablet {
-        width: 30%;
-        margin-bottom: 0;
-        margin-top: 2.7rem;
-        margin-left: 2.25rem;    
-
-    }
-}
-
-&__icon {
+    width: 30%;
+    justify-content: space-between;
 
     @include tablet {
-        width: 110%;
-        
-        
+      margin-bottom: 0;
+      margin-top: 2rem;
+      margin-left: 2.25rem;
+      padding: 0;
+      width: 25%;
+      
     }
-}
+  }
+
+  &__icon {
+    @include tablet {
+      width: 100%;
+    }
+  }
 }
 
 .contact {
-    
-    @include tablet {
-        order: 3;
-    }
-&__container {
+
+  @include tablet {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  &__container {
     display: flex;
+    flex-direction: column;
 
     @include tablet {
-        flex-direction: row;
-        justify-content: space-between;
+      flex-direction: row;
+      justify-content: space-between;
     }
-}
+  }
+
   &__text--top {
     margin-top: 1rem;
   }
@@ -112,16 +123,15 @@
     font-family: "Avenir Reg", sans-serif;
 
     @include tablet {
-        font-size: $fs-med;
-        line-height: $lh-sm;
+      font-size: $fs-med;
+      line-height: $lh-sm;
     }
   }
 
   &__name,
   &__company {
-
     @include tablet {
-        font-family: "Avenir Demi", sans-serif;
+      font-family: "Avenir Demi", sans-serif;
     }
   }
 
@@ -132,15 +142,13 @@
 }
 
 .footer__branding {
-    margin-top: 2rem;
-    
+  margin-top: 2rem;
+  display: flex;
 
-    @include tablet {
-        order: 2;
-        margin-left: auto;
-        
-        
-    }
+  @include tablet {
+    order: 2;
+    margin: auto;
+  }
 
   &-logo {
     height: 1.25rem;
@@ -148,18 +156,16 @@
   }
 }
 
-
 .copyright {
-
-    @include tablet {
-        order: 5;
-    }
-    &__text {
-        margin: 1rem 0;
-        padding-bottom: 1rem;
-        font-size: $fs-mob-xs;
-        letter-spacing: 0.025rem;
-        line-height: $lh-xs;
-        font-family: "Avenir Reg";
-    }
+  @include tablet {
+    order: 4;
+  }
+  &__text {
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    font-size: $fs-mob-xs;
+    letter-spacing: 0.025rem;
+    line-height: $lh-xs;
+    font-family: "Avenir Reg";
+  }
 }
