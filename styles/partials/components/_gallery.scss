@@ -26,7 +26,6 @@
     }
 
     @include desktop {
-
     }
   }
   &__image-group {
@@ -38,17 +37,22 @@
       margin: 0 auto 0 2.25rem;
       flex-direction: row;
       flex-wrap: wrap;
-
     }
   }
 
   &__image {
     margin-bottom: 1rem;
+    filter: grayscale(100%);
 
     @include tablet {
-        width: 30%;
-        margin-bottom: 1.5rem;
-        margin-right: 1.5rem;
+      width: 30%;
+      margin-bottom: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    &:hover {
+      filter: grayscale(0);
+      transition: 0.7s ease-out;
     }
   }
 }

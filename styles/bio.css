@@ -390,6 +390,7 @@ body {
 }
 .gallery__image {
   margin-bottom: 1rem;
+  filter: grayscale(100%);
 }
 @media screen and (min-width: 48rem) {
   .gallery__image {
@@ -397,6 +398,10 @@ body {
     margin-bottom: 1.5rem;
     margin-right: 1.5rem;
   }
+}
+.gallery__image:hover {
+  filter: grayscale(0);
+  transition: 0.7s ease-out;
 }
 
 .footer {
@@ -440,7 +445,7 @@ body {
   .socials__container {
     order: 1;
     flex-direction: row;
-    width: 60%;
+    width: 65%;
   }
 }
 .socials__title {
@@ -464,7 +469,7 @@ body {
   display: flex;
   flex-direction: row;
   margin-bottom: 1.5rem;
-  width: 30%;
+  width: 120px;
   justify-content: space-between;
 }
 @media screen and (min-width: 48rem) {
@@ -473,7 +478,7 @@ body {
     margin-top: 3.8rem;
     margin-left: 2.25rem;
     padding: 0;
-    width: 30%;
+    width: 100px;
   }
 }
 @media screen and (min-width: 48rem) {
