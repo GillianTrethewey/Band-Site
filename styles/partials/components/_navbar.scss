@@ -62,6 +62,10 @@
           width: 0;
         }
       }
+
+      &--shows:after {
+        left: 0;
+      }
     }
 
     &--active {
@@ -90,8 +94,11 @@
         width: 0;
       }
     }
+
+    &--shows:after {
+      left: 50%;
+    }
   }
 }
 
       
-

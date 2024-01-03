@@ -2,7 +2,7 @@
 @use "../base/_mixins.scss" as *;
 @use "../base/_typography.scss" as *;
 
-.hero {
+.hero-bio {
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
   box-shadow: inset 0 0 0 100vmax $main-dk-opacity;

@@ -1,0 +1,115 @@
+@use "../base/_variables.scss" as *;
+@use "../base/_mixins.scss" as *;
+@use "../base/_typography.scss" as *;
+
+.hero-shows {
+  background-image: url("../assets/images/hero-shows.jpg");
+  background-size: cover;
+  box-shadow: inset 0 0 0 100vmax $main-dk-opacity;
+  height: 29.5rem;
+  margin: 0;
+  padding: 0;
+  color: $main-lt;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    height: 42rem;
+  }
+
+  @include desktop {
+  }
+
+  &__container {
+    max-width: 80rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 1rem 2rem 1rem;
+
+    @include tablet {
+      padding: 6rem 9rem 6rem 1.5rem;
+    }
+    @include desktop {
+      padding: 10rem 7.75rem 0 7.75rem;
+      flex-direction: row;
+    }
+  }
+}
+
+.copy {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+      padding: 6rem 1.5rem;
+    }
+
+    @include desktop {
+      width: 50%;
+    }
+  }
+
+  &__byline {
+    font-size: $fs-mob-sm;
+    margin: 0;
+    padding-bottom: 1rem;
+    line-height: 1.375rem;
+
+    @include tablet {
+      font-size: $fs-mob-med;
+      line-height: 2rem;
+      padding-bottom: 2.5rem;
+      font-family: "Avenir Bold";
+    }
+
+    @include desktop {
+      padding-bottom: 3rem;
+    }
+  }
+
+  &__title {
+    font-size: $fs-mob-lg;
+    line-height: 2.75rem;
+    padding-bottom: 4rem;
+    font-family: "Avenir Demi";
+    margin: 0;
+
+    @include tablet {
+      padding-bottom: 3.5rem;
+      line-height: 4.25rem;
+      font-size: $fs-lg;
+    }
+
+    @include desktop {
+      font-size: $fs-mob-xl;
+
+    }
+  }
+}
+  .iframe {
+    color: #cccccc;
+    text-decoration: none;
+    height: 6rem;
+    width: 24rem;
+
+    @include tablet {
+      height: 9rem;
+      width: 36rem;
+    }
+
+    @include desktop {
+    }
+  }
+  .iframe__container {
+    @include desktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40%;
+    }
+  }
+
