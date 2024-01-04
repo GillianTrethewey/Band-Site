@@ -184,34 +184,34 @@ body {
   background-image: url("../assets/images/hero-shows.jpg");
   background-size: cover;
   box-shadow: inset 0 0 0 100vmax rgba(50, 50, 50, 0.5019607843);
-  height: 29.5rem;
   margin: 0;
   padding: 0;
   color: #fff;
   display: flex;
   flex-direction: column;
+  padding: 2rem 1rem 2.25rem 1rem;
 }
 @media screen and (min-width: 48rem) {
   .hero-shows {
-    height: 42rem;
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .hero-shows {
+    padding: 7.75rem 7.75rem 9rem 7.75rem;
   }
 }
 .hero-shows__container {
   max-width: 80rem;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
-  padding: 4rem 1rem 2rem 1rem;
-}
-@media screen and (min-width: 48rem) {
-  .hero-shows__container {
-    padding: 6rem 9rem 6rem 1.5rem;
-  }
 }
 @media screen and (min-width: 80rem) {
   .hero-shows__container {
-    padding: 10rem 7.75rem 0 7.75rem;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 350px;
   }
 }
 
@@ -219,75 +219,82 @@ body {
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 48rem) {
   .copy__container {
-    padding: 6rem 1.5rem;
+    width: 80%;
   }
 }
 @media screen and (min-width: 80rem) {
   .copy__container {
-    width: 50%;
+    width: 48%;
   }
 }
 .copy__byline {
   font-size: 0.8125rem;
+  line-height: 2rem;
   margin: 0;
-  padding-bottom: 1rem;
-  line-height: 1.375rem;
+  padding: 0;
 }
 @media screen and (min-width: 48rem) {
   .copy__byline {
-    font-size: 1.25rem;
-    line-height: 2rem;
-    padding-bottom: 2.5rem;
-    font-family: "Avenir Bold";
+    font-size: 1.5rem;
+    line-height: 1.375rem;
+    font-family: "Avenir Reg";
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
   }
 }
 @media screen and (min-width: 80rem) {
   .copy__byline {
-    padding-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-family: "Avenir Demi";
+    letter-spacing: 1.1px;
   }
 }
 .copy__title {
   font-size: 1.5rem;
-  line-height: 2.75rem;
-  padding-bottom: 4rem;
+  line-height: 2rem;
   font-family: "Avenir Demi";
   margin: 0;
+  padding: 0;
+  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 48rem) {
   .copy__title {
-    padding-bottom: 3.5rem;
+    font-size: 3.75rem;
     line-height: 4.25rem;
-    font-size: 1.5rem;
+    margin-bottom: 3rem;
   }
 }
-@media screen and (min-width: 80rem) {
-  .copy__title {
-    font-size: 2.25rem;
-  }
-}
-
 .iframe {
-  color: #cccccc;
-  text-decoration: none;
-  height: 6rem;
-  width: 24rem;
+  height: 5.625rem;
+}
+@media screen and (min-width: 45rem) {
+  .iframe {
+    height: 7rem;
+  }
 }
 @media screen and (min-width: 48rem) {
   .iframe {
-    height: 9rem;
-    width: 36rem;
+    height: 8.7rem;
+  }
+}
+.iframe__container {
+  max-width: 30rem;
+  width: 80%;
+}
+@media screen and (min-width: 48rem) {
+  .iframe__container {
+    width: 65%;
+    margin-bottom: 1.5rem;
   }
 }
 @media screen and (min-width: 80rem) {
   .iframe__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
+    margin-top: 4rem;
+    width: 41%;
   }
 }
 
