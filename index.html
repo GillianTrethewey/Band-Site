@@ -117,6 +117,46 @@
           </div>
         </div>
       </section>
+
+      <section class="comments">
+        <div class="comments__container">
+          <h1 class="comments__title">Join the Conversation</h1>
+          <form class="comment__form" action="" method="post">
+            <div class="comment__group">
+              <div
+                class="comment__photo-container">
+                <img
+                  class="comment__photo"
+                  src="./assets/images/Mohan-muruge.jpg"
+                  alt="profile" />
+              </div>
+              <div class="comment__form-details">
+                <label for="name" class="comment__label">NAME</label>
+                <input
+                  class="comment__input"
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Enter your name" 
+                  required />
+                <label class="comment__label" for="comment">COMMENT</label>
+                <textarea
+                  class="comment__textarea"
+                  name="comment"
+                  id="comment"
+                  cols="30"
+                  rows="5"
+                  placeholder="Add a new comment"
+                  required></textarea>
+                <div class="comment__button-container">
+                  <button class="comment__button" type="submit">COMMENT</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="comments__list"></div>
+      </section>
     </main>
 
     <footer class="footer">

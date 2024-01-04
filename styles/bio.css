@@ -615,4 +615,238 @@ body {
     line-height: 1.25rem;
     margin: 2.75rem 0;
   }
+}
+
+.comments {
+  padding: 1rem;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (min-width: 48rem) {
+  .comments {
+    padding: 0 2.25rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .comments {
+    padding: 0 7.75rem;
+  }
+}
+.comments__container {
+  max-width: 80rem;
+}
+.comments__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "Avenir Demi";
+  padding-top: 1.5rem;
+  margin-top: 0;
+}
+@media screen and (min-width: 48rem) {
+  .comments__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding-top: 3rem;
+  }
+}
+.comments__list {
+  margin-top: 2rem;
+  width: 65%;
+}
+@media screen and (min-width: 48rem) {
+  .comments__list {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .comments {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.comment__label {
+  color: #afafaf;
+  font-family: "Avenir Demi";
+  margin-bottom: 0.5rem;
+}
+.comment__form {
+  width: 94%;
+}
+@media screen and (min-width: 48rem) {
+  .comment__form {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .comment__form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.comment__input {
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+  width: 100%;
+  height: 2.5rem;
+  line-height: 2rem;
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
+  background-color: #fafafa;
+}
+@media screen and (min-width: 48rem) {
+  .comment__input {
+    height: 3rem;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+.comment__input:focus {
+  outline: 1px solid #323232;
+}
+.comment__input:invalid:required {
+  border: 1px solid #e1e1e1;
+}
+.comment__input:invalid {
+  border: 1px solid red;
+}
+.comment__input:valid {
+  border: 1px solid #e1e1e1;
+}
+.comment__textarea {
+  background-color: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+  width: 100%;
+  line-height: 2rem;
+  padding-left: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+@media screen and (min-width: 80rem) {
+  .comment__textarea {
+    height: 6rem;
+    font-size: 1rem;
+  }
+}
+.comment__textarea:focus {
+  outline: 1px solid #323232;
+}
+.comment__textarea:invalid:required {
+  border: 1px solid #e1e1e1;
+}
+.comment__textarea:invalid {
+  border: 1px solid red;
+}
+.comment__textarea:valid {
+  border: 1px solid #e1e1e1;
+}
+.comment__container {
+  width: 90%;
+  max-width: 80rem;
+}
+.comment__group {
+  display: flex;
+}
+.comment__photo-container {
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  margin-top: 0.75rem;
+  margin-right: 1.25rem;
+}
+.comment__photo {
+  border-radius: 50%;
+  margin-top: 0.75rem;
+  margin-right: 1.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #e1e1e1;
+}
+@media screen and (min-width: 48rem) {
+  .comment__photo {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.comment__name-date-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 48rem) {
+  .comment__name-date-container {
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .comment__name-date-container {
+    width: 28.75rem;
+  }
+}
+.comment__name {
+  font-family: "Avenir Demi";
+}
+@media screen and (min-width: 48rem) {
+  .comment__name {
+    margin-right: 0.625rem;
+  }
+}
+.comment__date {
+  color: #e1e1e1;
+}
+.comment__card {
+  width: 94%;
+  border-bottom: 1px solid #e1e1e1;
+}
+@media screen and (min-width: 48rem) {
+  .comment__card {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .comment__card {
+    width: 100%;
+  }
+}
+.comment__card:first-child {
+  border-top: 1px solid #e1e1e1;
+}
+.comment__button {
+  display: block;
+  height: 2.5rem;
+  width: 100%;
+  background-color: #323232;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .comment__button {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .comment__button {
+    height: 3rem;
+    width: 25%;
+  }
+}
+.comment__button:hover {
+  background-color: #000;
+  cursor: pointer;
+  transition: 0.7s;
+}
+.comment__button-container {
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .comment__button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
 }/*# sourceMappingURL=bio.css.map */

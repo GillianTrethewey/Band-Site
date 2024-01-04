@@ -475,4 +475,132 @@ body {
     line-height: 1.25rem;
     margin: 2.75rem 0;
   }
+}
+
+.shows {
+  padding-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+}
+@media screen and (min-width: 48rem) {
+  .shows {
+    width: 100%;
+    padding-left: 1.5rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .shows {
+    padding-left: 11.25rem;
+    display: flex;
+    width: auto;
+  }
+}
+.shows__table {
+  margin-top: 1.875rem;
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .shows__table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .shows__table {
+    margin-left: 7.5rem;
+    width: 65%;
+  }
+}
+.shows__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "Avenir Demi";
+  padding-top: 1.5rem;
+  margin-top: 0;
+}
+@media screen and (min-width: 48rem) {
+  .shows__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding-top: 3rem;
+  }
+}
+.show__card {
+  border-bottom: 1px solid #e1e1e1;
+}
+@media screen and (min-width: 48rem) {
+  .show__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.625rem;
+  }
+}
+.show__heading {
+  color: #afafaf;
+  font-family: "Avenir Demi";
+}
+@media screen and (min-width: 48rem) {
+  .show__heading {
+    display: none;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .show__date {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .show__venue {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .show__location {
+    width: 25%;
+  }
+}
+.show__button {
+  height: 3.125rem;
+  background-color: #000;
+  color: #fff;
+  font-family: "Avenir Demi";
+  font-size: 0.9rem;
+  margin-bottom: 0.625rem;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+}
+@media screen and (min-width: 48rem) {
+  .show__button {
+    width: 25%;
+  }
+}
+.show__button:hover {
+  background-color: #000;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.tablet__header {
+  display: none;
+}
+@media screen and (min-width: 48rem) {
+  .tablet__header {
+    display: flex;
+    color: #afafaf;
+    font-family: "Avenir Demi";
+    width: 80%;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .tablet__date, .tablet__venue, .tablet__location {
+    width: 31%;
+  }
 }/*# sourceMappingURL=shows.css.map */

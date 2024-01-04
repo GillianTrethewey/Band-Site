@@ -1,0 +1,249 @@
+@use "../base/_variables.scss" as *;
+@use "../base/_mixins.scss" as *;
+@use "../base/_typography.scss" as *;
+@use "../base/globals.scss" as *;
+
+.comments {
+  padding: 1rem;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include tablet {
+    padding: 0 2.25rem;
+  }
+
+  @include desktop {
+    padding: 0 7.75rem;
+  }
+
+  &__container {
+    max-width: 80rem;
+  }
+
+  &__title {
+    font-size: $fs-mob-lg;
+    line-height: $lh-lg;
+    font-family: "Avenir Demi";
+    padding-top: 1.5rem;
+    margin-top: 0;
+
+    @include tablet {
+      font-size: $fs-xl;
+      line-height: $lh-xl;
+      padding-top: 3rem;
+    }
+
+    @include desktop {
+    }
+  }
+
+  &__list {
+    margin-top: 2rem;
+    width: 65%;
+
+    @include tablet {
+      margin-left: 5rem;
+      margin-right: 5rem;
+    }
+  }
+
+  @include desktop {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.comment {
+
+  &__label {
+    color: $main-med;
+    font-family: "Avenir Demi";
+    margin-bottom: 0.5rem;
+  }
+
+  &__form {
+    width: 94%;
+
+    @include tablet {
+      margin-left: 5rem;
+      margin-right: 5rem;
+    }
+
+    @include desktop {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__input {
+    border: 1px solid $sec-med;
+    border-radius: 3px;
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2rem;
+    padding: 0.625rem;
+    margin-bottom: 0.625rem;
+    background-color: $sec-lt;
+
+    @include tablet {
+      height: 3rem;
+      font-size: 1rem;
+      padding: 1rem;
+    }
+    &:focus {
+        outline: 1px solid $main-dk;
+    }
+
+    &:invalid:required {
+        border: 1px solid $sec-med;
+    }
+    
+    &:invalid {
+        border: 1px solid red;
+    }
+    &:valid {
+        border: 1px solid $sec-med;
+    }
+  }
+
+  &__textarea {
+    background-color: $sec-lt;
+    border: 1px solid $sec-med;
+    border-radius: 3px;
+    width: 100%;
+    line-height: 2rem;
+    padding-left: 0.625rem;
+    margin-bottom: 0.625rem;
+
+    @include desktop {
+      height: 6rem;
+      font-size: 1rem;
+    }
+
+    &:focus {
+        outline:1px solid $main-dk;
+    }
+
+    &:invalid:required {
+        border: 1px solid $sec-med;
+    }
+
+    &:invalid {
+        border: 1px solid red;
+    }
+
+    &:valid {
+        border: 1px solid $sec-med;
+    }
+  }
+
+  &__container {
+    width: 90%;
+    max-width: 80rem;
+  }
+
+  &__group {
+    display: flex;
+  }
+
+  &__photo-container {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    margin-top: 0.75rem;
+    margin-right: 1.25rem;
+  }
+
+  &__photo {
+    border-radius: 50%;
+    margin-top: 0.75rem;
+    margin-right: 1.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: $sec-med;
+
+    @include tablet {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  &__name-date-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      justify-content: flex-start;
+    }
+
+    @include desktop {
+      width: 28.75rem;
+    }
+  }
+
+  &__name {
+    font-family: "Avenir Demi";
+
+    @include tablet {
+      margin-right: 0.625rem;
+    }
+  }
+
+  &__date {
+    color: $sec-med;
+  }
+
+  &__card {
+    width: 94%;
+    border-bottom: 1px solid $sec-med;
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include desktop {
+      width: 100%;
+    }
+
+    &:first-child {
+      border-top: 1px solid $sec-med;
+    }
+  }
+
+  &__button {
+    display: block;
+    height: 2.5rem;
+    width: 100%;
+    background-color: $main-dk;
+    color: $main-lt;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+
+    @include tablet {
+      width: 25%;
+    }
+
+    @include desktop {
+      height: 3rem;
+      width: 25%;
+    }
+
+    &:hover {
+      background-color: $sec-dk;
+      cursor: pointer;
+      transition: 0.7s;
+    }
+    &-container {
+      width: 100%;
+
+      @include tablet {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
