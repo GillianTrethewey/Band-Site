@@ -3,7 +3,6 @@
 @use "../base/_typography.scss" as *;
 @use "../base/globals" as *;
 
-
 .hero-shows {
   background-image: url("../assets/images/hero-shows.jpg");
   background-size: cover;
@@ -35,7 +34,7 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      height: 350px;
+      height: 21.875rem;
     }
   }
 }
