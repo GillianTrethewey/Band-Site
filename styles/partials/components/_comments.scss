@@ -56,7 +56,6 @@
 }
 
 .comment {
-
   &__label {
     color: $main-med;
     font-family: "Avenir Demi";
@@ -93,18 +92,18 @@
       padding: 1rem;
     }
     &:focus {
-        outline: 1px solid $main-dk;
+      outline: 1px solid $main-dk;
     }
 
     &:invalid:required {
-        border: 1px solid $sec-med;
+      border: 1px solid $sec-med;
     }
-    
+
     &:invalid {
-        border: 1px solid red;
+      border: 1px solid red;
     }
     &:valid {
-        border: 1px solid $sec-med;
+      border: 1px solid $sec-med;
     }
   }
 
@@ -123,19 +122,19 @@
     }
 
     &:focus {
-        outline:1px solid $main-dk;
+      outline: 1px solid $main-dk;
     }
 
     &:invalid:required {
-        border: 1px solid $sec-med;
+      border: 1px solid $sec-med;
     }
 
     &:invalid {
-        border: 1px solid red;
+      border: 1px solid red;
     }
 
     &:valid {
-        border: 1px solid $sec-med;
+      border: 1px solid $sec-med;
     }
   }
 
@@ -214,22 +213,26 @@
   }
 
   &__button {
-    display: block;
-    height: 2.5rem;
-    width: 100%;
+    height: 2.6rem;
     background-color: $main-dk;
     color: $main-lt;
-    border-radius: 5px;
-    border: none;
+    font-family: "Avenir Demi";
     font-size: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    width: 100%;
+    border: none;
 
     @include tablet {
-      width: 25%;
+      width: 22%;
+      font-size: 0.87rem;
+      padding-left: 32px;
+      padding-right: 32px;   
     }
 
     @include desktop {
-      height: 3rem;
-      width: 25%;
+      width: 20%;
+      font-size: 0.9rem;
     }
 
     &:hover {
@@ -237,6 +240,7 @@
       cursor: pointer;
       transition: 0.7s;
     }
+  
     &-container {
       width: 100%;
 

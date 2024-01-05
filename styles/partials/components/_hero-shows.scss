@@ -25,7 +25,7 @@
   &__container {
     max-width: 80rem;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 
     @include tablet {
     }
@@ -96,7 +96,7 @@
 }
 
 .iframe {
-  height: 5.625rem;
+  height: 6rem;
 
   @include mid-gallery {
     height: 7rem;
@@ -107,11 +107,10 @@
   }
 
   &__container {
-    max-width: 30rem;
-    width: 80%;
+    width: 100%;
 
     @include tablet {
-      width: 65%;
+      width: 60%;
       margin-bottom: 1.5rem;
     }
 
