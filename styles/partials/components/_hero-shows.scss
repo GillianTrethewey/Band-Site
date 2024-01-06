@@ -6,6 +6,8 @@
 .hero-shows {
   background-image: url("../assets/images/hero-shows.jpg");
   background-size: cover;
+  background-repeat: none;
+  background-position: 50% 30%;
   box-shadow: inset 0 0 0 100vmax $main-dk-opacity;
   margin: 0;
   padding: 0;
@@ -13,6 +15,7 @@
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem 2.25rem 1rem;
+  
 
   @include tablet {
     padding: 3rem 2.25rem 2.25rem 2.25rem;
@@ -20,10 +23,11 @@
 
   @include desktop {
     padding: 7.75rem 7.75rem 9rem 7.75rem;
+    height: 45vw;
+    max-height: 70vh;
   }
 
   &__container {
-    max-width: 80rem;
     display: flex;
     flex-wrap: wrap;
 
@@ -34,7 +38,7 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      height: 21.875rem;
+      
     }
   }
 }
@@ -63,7 +67,7 @@
     @include tablet {
       font-size: $fs-lg;
       line-height: $lh-med;
-      font-family: "Avenir Reg";
+      font-weight: 300;
       padding-bottom: 1rem;
       padding-top: 0.5rem;
     }
@@ -71,7 +75,7 @@
     @include desktop {
       padding-bottom: 1.5rem;
       font-size: $fs-lg;
-      font-family: "Avenir Demi";
+      font-weight: 600;
       letter-spacing: 1.1px;
     }
   }
@@ -79,7 +83,7 @@
   &__title {
     font-size: $fs-mob-lg;
     line-height: $lh-lg;
-    font-family: "Avenir Demi";
+    font-weight: 600;
     margin: 0;
     padding: 0;
     margin-bottom: 1.5rem;
@@ -89,14 +93,12 @@
       line-height: $lh-xxl;
       margin-bottom: 3rem;
     }
-
-    @include desktop {
-    }
   }
 }
 
 .iframe {
-  height: 6rem;
+  height: 7rem;
+  max-width: 25rem;
 
   @include mid-gallery {
     height: 7rem;

@@ -76,9 +76,9 @@ const commentsForm = document.querySelector(".comment__form");
 commentsForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let newDate = new Date();
-  let currDate = `${
-    newDate.getMonth() + 1
-  }/${newDate.getDate()}/${newDate.getFullYear()}`;
+  let month = (newDate.getMonth() + 1).toString().padStart(2, "0");
+
+  let currDate = `${month}/${newDate.getDate()}/${newDate.getFullYear()}`;
   let newComment = {
     name: e.target.name.value,
     date: currDate,

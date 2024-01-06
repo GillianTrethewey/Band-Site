@@ -7,12 +7,8 @@
 :root {
   font-size: 16px;
   color: #323232;
-  font-family: "Avenir Reg", sans-serif;
+  font-family: "Avenir", sans-serif;
   background-color: #fff;
-}
-
-html {
-  width: 100%;
 }
 
 body {
@@ -26,18 +22,22 @@ td {
   border-collapse: collapse;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @font-face {
-  font-family: "Avenir Reg";
+  font-family: "Avenir";
   src: url("../assets/fonts/Avenir-otf/AvenirNextLTPro-Regular.otf") format("otf"), url("../assets/fonts/Avenir-ttf/AvenirNextLTPro-Regular.ttf") format("ttf"), url("../assets/fonts/Avenir-woff/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/Avenir-woff2/AvenirNextLTPro-Regular.woff2") format("woff2");
   font-weight: 300;
 }
 @font-face {
-  font-family: "Avenir Demi";
+  font-family: "Avenir";
   src: url("../assets/fonts/Avenir-otf/AvenirNextLTPro-Demi.otf") format("otf"), url("../assets/fonts/Avenir-ttf/AvenirNextLTPro-Demi.ttf") format("ttf"), url("../assets/fonts/Avenir-woff/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/Avenir-woff2/AvenirNextLTPro-Demi.woff2") format("woff2");
   font-weight: 600;
 }
 @font-face {
-  font-family: "Avenir Bold";
+  font-family: "Avenir";
   src: url("../assets/fonts/Avenir-otf/AvenirNextLTPro-Bold.otf") format("otf"), url("../assets/fonts/Avenir-ttf/AvenirNextLTPro-Bold.ttf") format("ttf"), url("../assets/fonts/Avenir-woff/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/Avenir-woff2/AvenirNextLTPro-Bold.woff2") format("woff2");
   font-weight: 700;
 }
@@ -88,6 +88,9 @@ td {
   justify-content: center;
   align-items: center;
 }
+.header__branding-link--active {
+  color: #fff;
+}
 .header__branding-logo {
   height: 1.25rem;
   width: 7.5rem;
@@ -119,7 +122,7 @@ td {
 .nav__link {
   text-decoration: none;
   color: #e1e1e1;
-  font-family: "Avenir Reg";
+  font-weight: 300;
   font-size: 0.875rem;
 }
 @media screen and (min-width: 48rem) {
@@ -156,8 +159,9 @@ td {
   left: 0;
 }
 .nav__link--active {
-  font-family: "Avenir Demi";
+  font-weight: 600;
   text-decoration: none;
+  color: #fff;
 }
 @media screen and (min-width: 48rem) {
   .nav__link--active {
@@ -190,6 +194,8 @@ td {
 .hero-shows {
   background-image: url("../assets/images/hero-shows.jpg");
   background-size: cover;
+  background-repeat: none;
+  background-position: 50% 30%;
   box-shadow: inset 0 0 0 100vmax rgba(50, 50, 50, 0.5019607843);
   margin: 0;
   padding: 0;
@@ -206,10 +212,11 @@ td {
 @media screen and (min-width: 80rem) {
   .hero-shows {
     padding: 7.75rem 7.75rem 9rem 7.75rem;
+    height: 45vw;
+    max-height: 70vh;
   }
 }
 .hero-shows__container {
-  max-width: 80rem;
   display: flex;
   flex-wrap: wrap;
 }
@@ -218,7 +225,6 @@ td {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 21.875rem;
   }
 }
 
@@ -247,7 +253,7 @@ td {
   .copy__byline {
     font-size: 1.5rem;
     line-height: 1.375rem;
-    font-family: "Avenir Reg";
+    font-weight: 300;
     padding-bottom: 1rem;
     padding-top: 0.5rem;
   }
@@ -256,14 +262,14 @@ td {
   .copy__byline {
     padding-bottom: 1.5rem;
     font-size: 1.5rem;
-    font-family: "Avenir Demi";
+    font-weight: 600;
     letter-spacing: 1.1px;
   }
 }
 .copy__title {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "Avenir Demi";
+  font-weight: 600;
   margin: 0;
   padding: 0;
   margin-bottom: 1.5rem;
@@ -275,8 +281,10 @@ td {
     margin-bottom: 3rem;
   }
 }
+
 .iframe {
-  height: 6rem;
+  height: 7rem;
+  max-width: 25rem;
 }
 @media screen and (min-width: 45rem) {
   .iframe {
@@ -313,7 +321,7 @@ td {
   .footer {
     padding-left: 2.25rem;
     padding-right: 2.25rem;
-    height: 400px;
+    height: 25rem;
   }
 }
 @media screen and (min-width: 80rem) {
@@ -323,7 +331,6 @@ td {
   }
 }
 .footer__container {
-  max-width: 80rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -334,6 +341,9 @@ td {
   }
 }
 
+.socials {
+  width: 90%;
+}
 @media screen and (min-width: 48rem) {
   .socials {
     width: 35rem;
@@ -354,7 +364,7 @@ td {
 .socials__title {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "Avenir Demi";
+  font-weight: 600;
   margin-bottom: 1rem;
   margin-top: 1rem;
   padding-top: 1.5rem;
@@ -383,12 +393,14 @@ td {
     padding: 0;
   }
 }
-@media screen and (min-width: 48rem) {
-  .socials__icon {
-    width: 110%;
-  }
+.socials__icon {
+  height: 1.25rem;
 }
-
+.contact {
+  width: 90%;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 @media screen and (min-width: 48rem) {
   .contact {
     order: 3;
@@ -398,7 +410,8 @@ td {
 .contact__container {
   display: flex;
   flex-direction: column;
-  width: 680px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media screen and (min-width: 48rem) {
   .contact__container {
@@ -416,7 +429,7 @@ td {
   margin: 0;
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-family: "Avenir Reg", sans-serif;
+  font-weight: 300;
 }
 @media screen and (min-width: 48rem) {
   .contact__name, .contact__company, .contact__text, .contact__email {
@@ -426,7 +439,7 @@ td {
 }
 @media screen and (min-width: 48rem) {
   .contact__name, .contact__company {
-    font-family: "Avenir Demi", sans-serif;
+    font-weight: 600;
   }
 }
 .contact__email-link {
@@ -443,6 +456,8 @@ td {
 }
 
 .footer__branding {
+  width: -moz-fit-content;
+  width: fit-content;
   margin-top: 2rem;
   display: flex;
 }
@@ -462,9 +477,14 @@ td {
   width: 7.5rem;
 }
 
+.copyright {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 @media screen and (min-width: 48rem) {
   .copyright {
     order: 4;
+    height: 3rem;
   }
 }
 .copyright__text {
@@ -473,7 +493,7 @@ td {
   font-size: 0.625rem;
   letter-spacing: 0.025rem;
   line-height: 1.125rem;
-  font-family: "Avenir Reg";
+  font-weight: 300;
 }
 @media screen and (min-width: 48rem) {
   .copyright__text {
@@ -486,9 +506,6 @@ td {
 .shows {
   padding: 1rem;
 }
-.shows * {
-  border: 1px solid black;
-}
 @media screen and (min-width: 48rem) {
   .shows {
     padding: 2.25rem;
@@ -497,12 +514,32 @@ td {
 @media screen and (min-width: 80rem) {
   .shows {
     padding: 3rem 7.75rem 2rem 7.75rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .shows__container {
+    display: flex;
+    justify-content: flex-end;
+    width: 75%;
+  }
+}
+.shows__table {
+  margin-top: 1.875rem;
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .shows__table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 }
 .shows__title {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "Avenir Demi";
+  font-weight: 600;
   padding-top: 1.5rem;
   margin-top: 0;
 }
@@ -513,103 +550,117 @@ td {
     padding-top: 1rem;
   }
 }
-.table {
-  margin-top: 1.875rem;
-  width: 70%;
-}
-@media screen and (min-width: 48rem) {
-  .table {
-    margin-bottom: 0.625rem;
-    flex-direction: row;
-  }
-}
-@media screen and (min-width: 80rem) {
-  .table {
-    margin-left: 7.75rem;
-  }
-}
-.table__head {
-  visibility: collapse;
-}
-@media screen and (min-width: 48rem) {
-  .table__head {
-    visibility: visible;
-  }
-}
-.table__row {
-  width: 100%;
+.show__card {
   border-bottom: 1px solid #e1e1e1;
 }
-@media screen and (max-width: 768px) {
-  .table__row {
+@media screen and (min-width: 48rem) {
+  .show__card {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.625rem;
   }
 }
-.table__row:hover {
-  background-color: #fafafa;
-}
-.table__heading {
+.show__heading {
   color: #afafaf;
-  font-family: "Avenir Demi";
+  font-weight: 600;
   font-size: 0.625rem;
   line-height: 0.5rem;
 }
 @media screen and (min-width: 48rem) {
-  .table__heading {
+  .show__heading {
     display: none;
   }
 }
-.table__date, .table__venue, .table__location {
+.show__date, .show__venue, .show__location {
   color: #323232;
   font-size: 0.8125rem;
-  font-family: "Avenir Demi";
   margin-bottom: 1rem;
 }
 @media screen and (min-width: 48rem) {
-  .table__date, .table__venue, .table__location {
+  .show__date, .show__venue, .show__location {
+    width: 33.3333%;
     font-size: 0.875rem;
   }
 }
-.table__venue, .table__location {
-  font-family: "Avenir Reg";
-}
-.table__button {
-  height: 2.6rem;
-  background-color: #323232;
-  color: #fff;
-  font-family: "Avenir Demi";
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  border-radius: 4px;
-  width: 100%;
-  border: none;
+.show__date {
+  font-weight: 600;
 }
 @media screen and (min-width: 48rem) {
-  .table__button {
-    font-size: 0.85rem;
-    padding-left: 32px;
-    padding-right: 32px;
-    width: 160px;
+  .show__date {
+    width: 30%;
   }
 }
 @media screen and (min-width: 80rem) {
-  .table__button {
+  .show__date {
+    width: 30%;
+  }
+}
+.show__venue, .show__location {
+  font-weight: 300;
+}
+@media screen and (min-width: 48rem) {
+  .show__venue, .show__location {
+    width: 20%;
+  }
+}
+.show__button {
+  height: 2.6rem;
+  background-color: #323232;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+  font-weight: 300;
+}
+@media screen and (min-width: 48rem) {
+  .show__button {
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 0.875rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .show__button {
     font-size: 0.9rem;
   }
 }
-.table__button:hover {
+.show__button:hover {
   background-color: #000;
   cursor: pointer;
   transition: 0.7s;
 }
 
-.tablet__date, .tablet__venue, .tablet__location {
-  text-align: left;
+.tablet__header {
+  display: none;
+}
+@media screen and (min-width: 48rem) {
+  .tablet__header {
+    display: flex;
+    color: #afafaf;
+    font-weight: 600;
+    width: 80%;
+  }
 }
 @media screen and (min-width: 48rem) {
   .tablet__date, .tablet__venue, .tablet__location {
-    font-size: 0.8125rem;
+    width: 40%;
+    font-size: 0.75rem;
+    font-weight: 300;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .tablet__date {
+    width: 55%;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .tablet__date {
+    width: 56%;
   }
 }/*# sourceMappingURL=shows.css.map */

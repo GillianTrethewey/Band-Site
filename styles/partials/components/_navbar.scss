@@ -31,7 +31,7 @@
   &__link {
     text-decoration: none;
     color: $sec-med;
-    font-family: "Avenir Reg";
+    font-weight: 300;
     font-size: $fs-med;
 
     @include tablet {
@@ -39,7 +39,6 @@
     }
 
     &:hover {
-
       @include tablet {
         border-bottom: 3px solid $main-lt;
         padding-bottom: 1.7rem;
@@ -69,8 +68,9 @@
     }
 
     &--active {
-      font-family: "Avenir Demi";
+      font-weight: 600;
       text-decoration: none;
+      color: $main-lt;
 
       @include tablet {
         border-bottom: 3px solid $main-lt;
@@ -82,7 +82,7 @@
       }
     }
 
-    &--active:after{
+    &--active:after {
       content: "";
       width: 100%;
       border-bottom: 3px solid $main-lt;
@@ -100,5 +100,3 @@
     }
   }
 }
-
-      

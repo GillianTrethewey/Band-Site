@@ -18,14 +18,10 @@
     margin-right: 13.5rem;
   }
 
-  &__container {
-    max-width: 80rem;
-  }
-
   &__title {
     font-size: $fs-mob-lg;
     line-height: 2rem;
-    font-family: "Avenir Demi";
+    font-weight: 600;
     margin: 1.5rem 0 1rem 0;
 
     @include tablet {
@@ -51,14 +47,14 @@
     }
 
     @include desktop {
-      height: 27.5rem;
+      height: 50vh;
     }
   }
 
   &__subheader {
     font-size: $fs-med;
     line-height: $lh-med;
-    font-family: "Avenir Demi", sans-serif;
+    font-weight: 600;
     margin-bottom: 1rem;
     margin-top: 1.5rem;
 
@@ -67,14 +63,14 @@
       line-height: $lh-lg;
       margin-bottom: 1rem;
       margin-top: 3rem;
-      font-family: "Avenir Demi", sans-serif;
+      font-weight: 600;
     }
   }
 
   &__blockquote {
     margin: 0;
     padding: 0;
-    font-family: "Avenir Demi", sans-serif;
+    font-weight: 600;
     line-height: 1.5rem;
     font-size: $fs-med;
     margin-bottom: 0.5rem;
@@ -90,7 +86,7 @@
   }
 
   &__cite {
-    font-family: "Avenir Demi", sans-serif;
+    font-weight: 600;
     font-style: normal;
     font-size: $fs-med;
     line-height: $lh-med;
@@ -114,7 +110,7 @@
   }
 
   &__text {
-    font-family: "Avenir Reg", sans-serif;
+    font-weight: 300;
     line-height: $lh-xs;
     font-size: $fs-mob-sm;
     letter-spacing: 0.8;

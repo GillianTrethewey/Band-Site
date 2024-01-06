@@ -15,14 +15,12 @@
     padding: 0 7.75rem;
   }
 
-  &__container {
-    max-width: 80rem;
-  }
+
 
   &__title {
     font-size: $fs-mob-lg;
     line-height: $lh-lg;
-    font-family: "Avenir Demi";
+    font-weight: 600;
     padding-top: 1.5rem;
     margin-top: 0;
 

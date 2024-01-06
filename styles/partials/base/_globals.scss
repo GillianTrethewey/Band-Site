@@ -1,4 +1,4 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 *,
 *::before,
@@ -9,17 +9,12 @@
 :root {
   font-size: $fs-root;
   color: $main-dk;
-  font-family: "Avenir Reg", sans-serif;
+  font-family: "Avenir", sans-serif;
   background-color: $main-lt;
 }
 
-html {
-  width: 100%;
-}
-
 body {
-  margin: 0 auto;
-
+ margin: 0 auto;
 }
 
 table,
@@ -27,4 +22,8 @@ th,
 td {
   border: 0;
   border-collapse: collapse;
+}
+
+body {
+  overflow-x: hidden;
 }

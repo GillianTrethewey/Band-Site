@@ -4,9 +4,6 @@
 @use "../base/_variables.scss" as *;
 
 .shows {
-  * {
-    border: 1px solid black;
-  }
   padding: 1rem;
 
   @include tablet {
@@ -15,12 +12,36 @@
 
   @include desktop {
     padding: 3rem 7.75rem 2rem 7.75rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__container {
+    @include desktop {
+      display: flex;
+      justify-content: flex-end;
+      width: 75%;
+    }
+  }
+  &__table {
+    margin-top: 1.875rem;
+    width: 100%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    @include desktop {
+      
+    }
   }
 
   &__title {
     font-size: $fs-mob-lg;
     line-height: $lh-lg;
-    font-family: "Avenir Demi";
+    font-weight: 600;
     padding-top: 1.5rem;
     margin-top: 0;
 
@@ -35,50 +56,21 @@
   }
 }
 
-.table {
-  margin-top: 1.875rem;
-  width: 70%;
-
-  @include tablet {
-    margin-bottom: 0.625rem;
-    flex-direction: row;
-  }
-
-  @include desktop {
-    margin-left: 7.75rem;
-  }
-
-  &__head {
-    visibility: collapse;
-    @include tablet {
-      visibility: visible;
-    }
-  }
-
-  &__row {
-    width: 100%;
+.show {
+  &__card {
     border-bottom: 1px solid $sec-med;
-    // display: flex;
-    // flex-direction: column;
 
     @include tablet {
-    }
-    @media screen and (max-width: 768px) {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.625rem;
     }
-
-    &:hover {
-      background-color: $sec-lt;
-    }
-  }
-
-  &__body {
   }
 
   &__heading {
     color: $main-med;
-    font-family: "Avenir Demi";
+    font-weight: 600;
     font-size: $fs-mob-xs;
     line-height: 0.5rem;
 
@@ -92,27 +84,30 @@
   &__location {
     color: $main-dk;
     font-size: $fs-mob-sm;
-    font-family: "Avenir Demi";
     margin-bottom: 1rem;
 
     @include tablet {
+      width: 33.3333%;
       font-size: $fs-med;
     }
   }
 
   &__date {
+    font-weight: 600;
     @include tablet {
+      width: 30%;
     }
 
     @include desktop {
+      width: 30%;
     }
   }
-
   &__venue,
   &__location {
-    font-family: "Avenir Reg";
+    font-weight: 300;
 
     @include tablet {
+      width: 20%;
     }
   }
 
@@ -120,23 +115,24 @@
     height: 2.6rem;
     background-color: $main-dk;
     color: $main-lt;
-    font-family: "Avenir Demi";
+    font-weight: 600;
     font-size: 1rem;
     margin-bottom: 1rem;
-    margin-top: 1rem;
     border-radius: 4px;
     width: 100%;
     border: none;
+    font-weight: 300;
 
     @include tablet {
-      font-size: 0.85rem;
-      padding-left: 32px;
-      padding-right: 32px;
-      width: 160px;
+      width: fit-content;
+      font-size: 0.875rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
 
     @include desktop {
       font-size: 0.9rem;
+
     }
 
     &:hover {
@@ -148,12 +144,24 @@
 }
 
 .tablet {
+  &__header {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      color: $main-med;
+      font-weight: 600;
+      width: 80%;
+    }
+  }
+
   &__date,
   &__venue,
   &__location {
-    text-align: left;
     @include tablet {
-      font-size: $fs-mob-sm;
+      width: 40%;
+      font-size: 0.75rem;
+      font-weight: 300;
     }
 
     @include desktop {
@@ -162,9 +170,11 @@
 
   &__date {
     @include tablet {
+      width: 55%;
     }
 
     @include desktop {
+      width: 56%;
     }
   }
 }

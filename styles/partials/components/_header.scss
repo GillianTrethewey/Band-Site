@@ -46,7 +46,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    }
+      &--active {
+        color: $main-lt;
+      }}
 
     &-logo {
       height: 1.25rem;

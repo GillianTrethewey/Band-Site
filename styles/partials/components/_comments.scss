@@ -19,13 +19,13 @@
   }
 
   &__container {
-    max-width: 80rem;
+    @include desktop {
+    }
   }
-
   &__title {
     font-size: $fs-mob-lg;
     line-height: $lh-lg;
-    font-family: "Avenir Demi";
+    font-weight: 600;
     padding-top: 1.5rem;
     margin-top: 0;
 
@@ -40,30 +40,35 @@
   }
 
   &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 2rem;
-    width: 65%;
 
     @include tablet {
       margin-left: 5rem;
       margin-right: 5rem;
     }
-  }
 
-  @include desktop {
-    margin-left: auto;
-    margin-right: auto;
+    @include desktop {
+      width: 60%;
+    }
   }
 }
 
 .comment {
   &__label {
     color: $main-med;
-    font-family: "Avenir Demi";
-    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 0.5rem 0;
   }
 
   &__form {
-    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    background-color: pink;
 
     @include tablet {
       margin-left: 5rem;
@@ -76,6 +81,10 @@
     }
   }
 
+  &__form-details {
+    display: flex;
+    flex-direction: column;
+  }
   &__input {
     border: 1px solid $sec-med;
     border-radius: 3px;
@@ -85,6 +94,7 @@
     padding: 0.625rem;
     margin-bottom: 0.625rem;
     background-color: $sec-lt;
+    color: $main-dk;
 
     @include tablet {
       height: 3rem;
@@ -92,29 +102,30 @@
       padding: 1rem;
     }
     &:focus {
-      outline: 1px solid $main-dk;
+      border: 1px solid $main-dk;
     }
 
-    &:invalid:required {
-      border: 1px solid $sec-med;
-    }
-
-    &:invalid {
-      border: 1px solid red;
-    }
     &:valid {
       border: 1px solid $sec-med;
+    }
+
+    &::placeholder {
+      color: $main-dk;
+      font-family: "Avenir";
+      font-weight: 300;
+      font-size: 0.75rem;
     }
   }
 
   &__textarea {
     background-color: $sec-lt;
     border: 1px solid $sec-med;
-    border-radius: 3px;
+    border-radius: 4px;
     width: 100%;
     line-height: 2rem;
     padding-left: 0.625rem;
     margin-bottom: 0.625rem;
+    color: $main-dk;
 
     @include desktop {
       height: 6rem;
@@ -125,22 +136,16 @@
       outline: 1px solid $main-dk;
     }
 
-    &:invalid:required {
-      border: 1px solid $sec-med;
-    }
-
-    &:invalid {
-      border: 1px solid red;
-    }
-
     &:valid {
       border: 1px solid $sec-med;
     }
-  }
 
-  &__container {
-    width: 90%;
-    max-width: 80rem;
+    &::placeholder {
+      color: $main-dk;
+      font-family: "Avenir";
+      font-weight: 300;
+      font-size: 0.75rem;
+    }
   }
 
   &__group {
@@ -152,15 +157,16 @@
     height: 3.125rem;
     border-radius: 50%;
     margin-top: 0.75rem;
-    margin-right: 1.25rem;
+    margin-right: 1rem;
   }
 
   &__photo {
     border-radius: 50%;
-    margin-top: 0.75rem;
-    margin-right: 1.25rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
     width: 2.25rem;
     height: 2.25rem;
+    object-fit: cover;
     background-color: $sec-med;
 
     @include tablet {
@@ -170,7 +176,7 @@
   }
 
   &__name-date-container {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 
@@ -184,7 +190,7 @@
   }
 
   &__name {
-    font-family: "Avenir Demi";
+    font-weight: 600;
 
     @include tablet {
       margin-right: 0.625rem;
@@ -216,7 +222,7 @@
     height: 2.6rem;
     background-color: $main-dk;
     color: $main-lt;
-    font-family: "Avenir Demi";
+    font-weight: 600;
     font-size: 1rem;
     margin-bottom: 1rem;
     border-radius: 4px;
@@ -227,7 +233,7 @@
       width: 22%;
       font-size: 0.87rem;
       padding-left: 32px;
-      padding-right: 32px;   
+      padding-right: 32px;
     }
 
     @include desktop {
@@ -240,7 +246,7 @@
       cursor: pointer;
       transition: 0.7s;
     }
-  
+
     &-container {
       width: 100%;
 

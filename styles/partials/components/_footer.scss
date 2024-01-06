@@ -3,6 +3,8 @@
 @use "../base/_typography.scss" as *;
 
 .footer {
+
+
   color: $main-lt;
   background-color: $main-dk;
   padding-left: 1rem;
@@ -10,7 +12,7 @@
   @include tablet {
     padding-left: 2.25rem;
     padding-right: 2.25rem;
-    height: 400px;
+    height: 25rem;
   }
 
   @include desktop {
@@ -19,7 +21,6 @@
   }
 
   &__container {
-    max-width: 80rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -31,6 +32,8 @@
 }
 
 .socials {
+  width: 90%;
+
   @include tablet {
     width: 35rem;
   }
@@ -50,7 +53,7 @@
   &__title {
     font-size: $fs-mob-lg;
     line-height: 2rem;
-    font-family: "Avenir Demi";
+    font-weight: 600;
     margin-bottom: 1rem;
     margin-top: 1rem;
     padding-top: 1.5rem;
@@ -81,13 +84,18 @@
   }
 
   &__icon {
+    height: 1.25rem;
+
     @include tablet {
-      width: 110%;
+      
     }
   }
 }
 
 .contact {
+  width: 90%;
+  width: fit-content;
+
   @include tablet {
     order: 3;
     flex-basis: 100%;
@@ -96,7 +104,7 @@
   &__container {
     display: flex;
     flex-direction: column;
-    width: 680px;
+    width: fit-content;
 
     @include tablet {
       flex-direction: row;
@@ -116,7 +124,7 @@
     margin: 0;
     font-size: $fs-mob-sm;
     line-height: $lh-xs;
-    font-family: "Avenir Reg", sans-serif;
+    font-weight: 300;
 
     @include tablet {
       font-size: $fs-med;
@@ -127,7 +135,7 @@
   &__name,
   &__company {
     @include tablet {
-      font-family: "Avenir Demi", sans-serif;
+      font-weight: 600;
     }
   }
 
@@ -146,6 +154,7 @@
 }
 
 .footer__branding {
+  width: fit-content;
   margin-top: 2rem;
   display: flex;
 
@@ -165,8 +174,10 @@
 }
 
 .copyright {
+  width: fit-content;
   @include tablet {
     order: 4;
+    height: 3rem;
   }
 
   &__text {
@@ -175,7 +186,7 @@
     font-size: $fs-mob-xs;
     letter-spacing: 0.025rem;
     line-height: $lh-xs;
-    font-family: "Avenir Reg";
+    font-weight: 300;
 
     @include tablet {
       font-size: $fs-med;
