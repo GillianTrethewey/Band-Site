@@ -61,37 +61,45 @@ showsTable.appendChild(tabletHeader);
 
 const generateTable = (data) => {
   let showCard = document.createElement("div");
-  showCard.className = "show__card";
-
   let dateHeading = document.createElement("p");
-  dateHeading.innerText = "DATE";
-  dateHeading.className = "show__heading";
-  showCard.appendChild(dateHeading);
-
   let dateData = document.createElement("h3");
-  dateData.innerText = data["date"];
-  dateData.className = "show__date";
-  showCard.appendChild(dateData);
-
   let venueHeading = document.createElement("p");
-  venueHeading.innerText = "VENUE";
-  venueHeading.className = "show__heading";
-  showCard.appendChild(venueHeading);
-
   let venueData = document.createElement("p");
-  venueData.innerText = data["venue"];
-  venueData.className = "show__venue";
-  showCard.appendChild(venueData);
-
   let locationHeading = document.createElement("p");
-  locationHeading.innerText = "LOCATION";
-  locationHeading.className = "show__heading";
-  showCard.appendChild(locationHeading);
-
   let locationData = document.createElement("p");
-  locationData.innerText = data["location"];
+
+  showCard.className = "show__card";
+  dateHeading.className = "show__heading";
+  dateData.className = "show__date";
+  venueHeading.className = "show__heading";
+  venueData.className = "show__venue";
+  venueData.className = "show__venue";
+  locationHeading.className = "show__heading";
   locationData.className = "show__location";
+
+  dateHeading.innerText = "DATE";
+  dateData.innerText = data["date"];
+  venueData.innerText = data["venue"];
+  locationHeading.innerText = "LOCATION";
+  locationData.innerText = data["location"];
+
+  showCard.appendChild(dateHeading);
+  showCard.appendChild(dateData);
+  showCard.appendChild(venueHeading);
+  showCard.appendChild(venueData);
+  showCard.appendChild(locationHeading);
   showCard.appendChild(locationData);
+
+  // styling for click event on shows row
+
+  showCard.addEventListener("click", () => {
+    const activeShowCards = document.querySelectorAll(".show__card--active");
+    activeShowCards.forEach((show) => {
+      show.classList.remove(".show__card--active");
+    });
+
+    showCard.classList.add(".show__card--active");
+  });
 
   showsTable.appendChild(showCard);
 

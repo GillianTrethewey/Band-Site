@@ -32,7 +32,6 @@
 }
 
 .socials {
-  width: 90%;
 
   @include tablet {
     width: 35rem;
@@ -93,8 +92,6 @@
 }
 
 .contact {
-  width: 90%;
-  width: fit-content;
 
   @include tablet {
     order: 3;
@@ -104,16 +101,12 @@
   &__container {
     display: flex;
     flex-direction: column;
-    width: fit-content;
 
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
       margin-top: 0;
-    }
-
-    @include desktop {
-        width: 725px;
+      width: 46rem;
     }
   }
 
@@ -154,7 +147,6 @@
 }
 
 .footer__branding {
-  width: fit-content;
   margin-top: 2rem;
   display: flex;
 
@@ -174,7 +166,6 @@
 }
 
 .copyright {
-  width: fit-content;
   @include tablet {
     order: 4;
     height: 3rem;

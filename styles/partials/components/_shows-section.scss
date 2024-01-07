@@ -1,5 +1,4 @@
 @use "../base/typography" as *;
-@use "../base/globals" as *;
 @use "../base/mixins" as *;
 @use "../base/_variables.scss" as *;
 
@@ -34,7 +33,6 @@
     }
 
     @include desktop {
-      
     }
   }
 
@@ -64,7 +62,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.625rem;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+    }
+    &--active {
+      background-color: $main-med;
+    }
+
+    &:hover {
+      background-color: $sec-lt;
+      transition: 0.7s;
     }
   }
 
@@ -117,7 +124,6 @@
     color: $main-lt;
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: 1rem;
     border-radius: 4px;
     width: 100%;
     border: none;
@@ -132,7 +138,6 @@
 
     @include desktop {
       font-size: 0.9rem;
-
     }
 
     &:hover {

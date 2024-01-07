@@ -1,7 +1,6 @@
 @use "../base/_variables.scss" as *;
 @use "../base/_mixins.scss" as *;
 @use "../base/_typography.scss" as *;
-@use "../base/globals.scss" as *;
 
 .comments {
   padding: 1rem;
@@ -68,7 +67,6 @@
   &__form {
     display: flex;
     justify-content: space-between;
-    background-color: pink;
 
     @include tablet {
       margin-left: 5rem;
@@ -85,6 +83,7 @@
     display: flex;
     flex-direction: column;
   }
+
   &__input {
     border: 1px solid $sec-med;
     border-radius: 3px;
@@ -101,12 +100,14 @@
       font-size: 1rem;
       padding: 1rem;
     }
+
     &:focus {
+      outline: 1px solid transparent;
       border: 1px solid $main-dk;
     }
 
-    &:valid {
-      border: 1px solid $sec-med;
+    &:active {
+      border: 1px solid $main-dk;
     }
 
     &::placeholder {
@@ -133,11 +134,16 @@
     }
 
     &:focus {
-      outline: 1px solid $main-dk;
+      outline: 1px solid transparent;
+      border: 1px solid $main-dk;
     }
 
-    &:valid {
-      border: 1px solid $sec-med;
+    &:invalid {
+      border: 1px solid red;
+    }
+
+    &:active {
+      border: 1px solid $main-dk;
     }
 
     &::placeholder {
@@ -256,4 +262,8 @@
       }
     }
   }
+}
+
+.invalid {
+  border: 1px solid #d22d2d;
 }

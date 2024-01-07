@@ -341,9 +341,6 @@ body {
   }
 }
 
-.socials {
-  width: 90%;
-}
 @media screen and (min-width: 48rem) {
   .socials {
     width: 35rem;
@@ -396,11 +393,6 @@ body {
 .socials__icon {
   height: 1.25rem;
 }
-.contact {
-  width: 90%;
-  width: -moz-fit-content;
-  width: fit-content;
-}
 @media screen and (min-width: 48rem) {
   .contact {
     order: 3;
@@ -410,19 +402,13 @@ body {
 .contact__container {
   display: flex;
   flex-direction: column;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 @media screen and (min-width: 48rem) {
   .contact__container {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 0;
-  }
-}
-@media screen and (min-width: 80rem) {
-  .contact__container {
-    width: 725px;
+    width: 46rem;
   }
 }
 .contact__name, .contact__company, .contact__text, .contact__email {
@@ -456,8 +442,6 @@ body {
 }
 
 .footer__branding {
-  width: -moz-fit-content;
-  width: fit-content;
   margin-top: 2rem;
   display: flex;
 }
@@ -477,10 +461,6 @@ body {
   width: 7.5rem;
 }
 
-.copyright {
-  width: -moz-fit-content;
-  width: fit-content;
-}
 @media screen and (min-width: 48rem) {
   .copyright {
     order: 4;
@@ -558,8 +538,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.625rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
   }
+}
+.show__card--active {
+  background-color: #afafaf;
+}
+.show__card:hover {
+  background-color: #fafafa;
+  transition: 0.7s;
 }
 .show__heading {
   color: #afafaf;
@@ -610,7 +598,6 @@ body {
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
-  margin-bottom: 1rem;
   border-radius: 4px;
   width: 100%;
   border: none;

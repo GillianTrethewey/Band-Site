@@ -73,28 +73,74 @@ for (const comment of comments) {
 }
 
 const commentsForm = document.querySelector(".comment__form");
+
+// input and form validation
+// add listeners on input and textarea fields
+let nameInput = document.querySelector("input[name='name']");
+let commentInput = document.querySelector("textarea[name='comment']");
+
+nameInput.isValid = () => !!nameInput.value;
+commentInput.isValid = () => !!commentInput.value;
+
+const inputFields = [nameInput, commentInput];
+
+// validation code
+const isValidText = (text) => {
+  const re = /[\s\S]*[\w\W]*[\d\D]*/;
+  return re.test(String(text)).toLowerCase();
+};
+
+let shouldValidate = false;
+let isFormValid = false;
+
+const validateInputs = () => {
+  if (!shouldValidate) return;
+
+  isFormValid = true;
+  inputFields.forEach((input) => {
+    input.classList.remove("invalid");
+
+    if (!input.isValid()) {
+      input.classList.add("invalid");
+      isFormValid = false;
+    }
+  });
+};
+
 commentsForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  let newDate = new Date();
-  let month = (newDate.getMonth() + 1).toString().padStart(2, "0");
+  shouldValidate = true;
+  validateInputs();
+  if (isFormValid) {
+    // convert dates to correct format
+    let newDate = new Date();
 
-  let currDate = `${month}/${newDate.getDate()}/${newDate.getFullYear()}`;
-  let newComment = {
-    name: e.target.name.value,
-    date: currDate,
-    comment: e.target.comment.value,
-  };
+    let month = (newDate.getMonth() + 1).toString().padStart(2, "0");
+    let date = newDate.getDate().toString().padStart(2, "0");
+    let year = newDate.getFullYear().toString();
 
-  // newest comment on top
-  comments.unshift(newComment);
+    let currDate = `${month}/${date}/${year}`;
 
-  // clear prior to looping through comments
-  comments.innerText = "";
-  commentsList.innerText = "";
+    // populate new comment object
+    let newCommentObj = {
+      name: e.target.name.value,
+      date: currDate,
+      comment: e.target.comment.value,
+    };
 
-  for (const comment of comments) {
-    displayComments(comment);
+    // newest comment on top
+    comments.unshift(newCommentObj);
+
+    // clear comment area prior to looping through comments
+    comments.innerText = "";
+    commentsList.innerText = "";
+
+    for (const comment of comments) {
+      displayComments(comment);
+    }
+
+    e.target.reset();
   }
-
-  e.target.reset();
 });
+
+inputFields.forEach((input) => input.addEventListener("input", validateInputs));
