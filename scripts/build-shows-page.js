@@ -38,23 +38,23 @@ let shows = [
 
 let showsTable = document.querySelector(".shows__table");
 
-// header that displays in tablet and above
+// displays at tablet and above
 let tabletHeader = document.createElement("div");
-tabletHeader.className = "tablet__header";
+tabletHeader.classList.add("tablet__header");
 
 let headerDate = document.createElement("p");
 headerDate.innerText = "DATE";
-headerDate.className = "tablet__date";
+headerDate.classList.add("tablet__date");
 tabletHeader.appendChild(headerDate);
 
 let headerVenue = document.createElement("p");
 headerVenue.innerText = "VENUE";
-headerVenue.className = "tablet__venue";
+headerVenue.classList.add("tablet__venue");
 tabletHeader.appendChild(headerVenue);
 
 let headerLocation = document.createElement("p");
 headerLocation.innerText = "LOCATION";
-headerLocation.className = "tablet__location";
+headerLocation.classList.add("tablet__location");
 tabletHeader.appendChild(headerLocation);
 
 showsTable.appendChild(tabletHeader);
@@ -68,14 +68,14 @@ const generateTable = (data) => {
   let locationHeading = document.createElement("p");
   let locationData = document.createElement("p");
 
-  showCard.className = "show__card";
-  dateHeading.className = "show__heading";
-  dateData.className = "show__date";
-  venueHeading.className = "show__heading";
-  venueData.className = "show__venue";
-  venueData.className = "show__venue";
-  locationHeading.className = "show__heading";
-  locationData.className = "show__location";
+  showCard.classList.add("show__card");
+  dateHeading.classList.add("show__heading");
+  dateData.classList.add("show__date");
+  venueHeading.classList.add("show__heading");
+  venueData.classList.add("show__venue");
+  venueData.classList.add("show__venue");
+  locationHeading.classList.add("show__heading");
+  locationData.classList.add("show__location");
 
   dateHeading.innerText = "DATE";
   dateData.innerText = data["date"];
@@ -92,13 +92,14 @@ const generateTable = (data) => {
 
   // styling for click event on shows row
 
-  showCard.addEventListener("click", () => {
-    const activeShowCards = document.querySelectorAll(".show__card--active");
+  showCard.addEventListener("click", (e) => {
+    const activeShowCards = document.querySelectorAll(".show__card");
+
     activeShowCards.forEach((show) => {
-      show.classList.remove(".show__card--active");
+      show.classList.remove("show__card--active");
     });
 
-    showCard.classList.add(".show__card--active");
+    showCard.classList.add("show__card--active");
   });
 
   showsTable.appendChild(showCard);
@@ -109,6 +110,5 @@ const generateTable = (data) => {
   showCard.appendChild(buttonElement);
 };
 
-for (const show of shows) {
-  generateTable(show);
-}
+shows.map((show) => generateTable(show));
+

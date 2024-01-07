@@ -55,6 +55,7 @@
 }
 
 .show {
+
   &__card {
     border-bottom: 1px solid $sec-med;
 
@@ -64,10 +65,11 @@
       align-items: center;
       padding-bottom: 0.5rem;
       padding-top: 0.5rem;
-    }
-    &--active {
-      background-color: $main-med;
-    }
+      }
+
+      &--active {
+        background-color: $sec-med;
+      }
 
     &:hover {
       background-color: $sec-lt;

@@ -543,7 +543,7 @@ body {
   }
 }
 .show__card--active {
-  background-color: #afafaf;
+  background-color: #e1e1e1;
 }
 .show__card:hover {
   background-color: #fafafa;

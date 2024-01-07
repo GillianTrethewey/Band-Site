@@ -25,38 +25,38 @@ let comments = [
 
 let commentsList = document.querySelector(".comments__list");
 
-const displayComments = (comment) => {
+const displayComment = (comment) => {
   let commentCard = document.createElement("div");
-  commentCard.className = "comment__card";
+  commentCard.classList.add("comment-card");
 
   // Group contains Photo, Name-Date, Comment
   let commentGroup = document.createElement("div");
-  commentGroup.className = "comment__group";
+  commentGroup.classList.add("comment__group");
 
   let commentPhotoContainer = document.createElement("div");
-  commentPhotoContainer.className = "comment__photo-container";
+  commentPhotoContainer.classList.add("comment__photo-container");
   commentGroup.appendChild(commentPhotoContainer);
 
   let commentPhoto = document.createElement("img");
-  commentPhoto.className = "comment__photo";
+  commentPhoto.classList.add("comment__photo");
   commentPhotoContainer.appendChild(commentPhoto);
 
   // contains Name-Date, Comment
   let commentContainer = document.createElement("div");
-  commentContainer.className = "comment__container";
+  commentContainer.classList.add("comment__container");
   commentGroup.appendChild(commentContainer);
 
   let commentNameDateContainer = document.createElement("div");
-  commentNameDateContainer.className = "comment__name-date-container";
+  commentNameDateContainer.classList.add("comment__name-date-container");
   commentContainer.appendChild(commentNameDateContainer);
 
   let commentName = document.createElement("p");
   commentName.innerText = comment["name"];
-  commentName.className = "comment__name";
+  commentName.classList.add("comment__name");
   commentNameDateContainer.appendChild(commentName);
 
   let commentDate = document.createElement("p");
-  commentDate.className = "comment__date";
+  commentDate.classList.add("comment__date");
   commentDate.innerText = comment["date"];
   commentNameDateContainer.appendChild(commentDate);
 
@@ -68,9 +68,7 @@ const displayComments = (comment) => {
   commentsList.appendChild(commentCard);
 };
 
-for (const comment of comments) {
-  displayComments(comment);
-}
+comments.map((comment) => displayComment(comment));
 
 const commentsForm = document.querySelector(".comment__form");
 
@@ -84,7 +82,6 @@ commentInput.isValid = () => !!commentInput.value;
 
 const inputFields = [nameInput, commentInput];
 
-// validation code
 const isValidText = (text) => {
   const re = /[\s\S]*[\w\W]*[\d\D]*/;
   return re.test(String(text)).toLowerCase();
@@ -94,9 +91,11 @@ let shouldValidate = false;
 let isFormValid = false;
 
 const validateInputs = () => {
+
   if (!shouldValidate) return;
 
   isFormValid = true;
+
   inputFields.forEach((input) => {
     input.classList.remove("invalid");
 
@@ -112,32 +111,25 @@ commentsForm.addEventListener("submit", (e) => {
   shouldValidate = true;
   validateInputs();
   if (isFormValid) {
-    // convert dates to correct format
-    let newDate = new Date();
 
+    let newDate = new Date();
     let month = (newDate.getMonth() + 1).toString().padStart(2, "0");
     let date = newDate.getDate().toString().padStart(2, "0");
     let year = newDate.getFullYear().toString();
-
     let currDate = `${month}/${date}/${year}`;
 
-    // populate new comment object
     let newCommentObj = {
       name: e.target.name.value,
       date: currDate,
       comment: e.target.comment.value,
     };
 
-    // newest comment on top
     comments.unshift(newCommentObj);
 
-    // clear comment area prior to looping through comments
     comments.innerText = "";
     commentsList.innerText = "";
 
-    for (const comment of comments) {
-      displayComments(comment);
-    }
+    comments.map((comment) => displayComment(comment));
 
     e.target.reset();
   }
