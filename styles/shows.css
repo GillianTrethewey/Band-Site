@@ -317,12 +317,15 @@ td {
   color: #fff;
   background-color: #323232;
   padding-left: 1rem;
+  border-top: 1px solid #e1e1e1;
+  margin-top: 1rem;
 }
 @media screen and (min-width: 48rem) {
   .footer {
     padding-left: 2.25rem;
     padding-right: 2.25rem;
     height: 400px;
+    margin-top: 2.25rem;
   }
 }
 @media screen and (min-width: 80rem) {
@@ -531,7 +534,8 @@ td {
   line-height: 2rem;
   font-weight: 600;
   padding-top: 1.5rem;
-  margin-top: 0;
+  margin: 0;
+  margin-left: 1rem;
 }
 @media screen and (min-width: 48rem) {
   .shows__title {
@@ -590,6 +594,8 @@ td {
 }
 .show__date {
   font-weight: 600;
+  margin: 0;
+  padding: 0;
 }
 .show__venue, .show__location {
   font-weight: 300;

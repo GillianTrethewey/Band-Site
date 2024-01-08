@@ -7,11 +7,14 @@
   color: $main-lt;
   background-color: $main-dk;
   padding-left: 1rem;
+  border-top: 1px solid $sec-med;
+  margin-top: 1rem;
 
   @include tablet {
     padding-left: 2.25rem;
     padding-right: 2.25rem;
     height: 400px;
+    margin-top: 2.25rem;
   }
 
   @include desktop {
@@ -29,168 +32,162 @@
     }
   }
 
-
-.socials {
-  @include tablet {
-    width: 35rem;
-  }
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-
+  .socials {
     @include tablet {
-      order: 1;
+      width: 35rem;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+
+      @include tablet {
+        order: 1;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 23.5rem;
+      }
+    }
+
+    &__title {
+      font-size: $fs-mob-lg;
+      line-height: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      padding-top: 1.5rem;
+
+      @include tablet {
+        font-size: $fs-xl;
+        line-height: $lh-xl;
+        margin: 3rem 0 1.75rem 0;
+        justify-content: space-around;
+        padding: 0;
+      }
+    }
+
+    &__group {
+      display: flex;
       flex-direction: row;
+      margin-bottom: 1.5rem;
+      width: 7.5rem;
       justify-content: space-between;
-      width: 23.5rem;
+
+      @include tablet {
+        margin-bottom: 0;
+        margin-top: 3.8rem;
+        margin-left: 2.25rem;
+        padding: 0;
+      }
+    }
+
+    &__icon {
+      @include tablet {
+        width: 110%;
+      }
     }
   }
 
-
-  &__title {
-    font-size: $fs-mob-lg;
-    line-height: 2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    padding-top: 1.5rem;
-
+  .contact {
     @include tablet {
-      font-size: $fs-xl;
-      line-height: $lh-xl;
-      margin: 3rem 0 1.75rem 0;
-      justify-content: space-around;
-      padding: 0;
+      order: 3;
+      flex-basis: 100%;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+
+      @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 0;
+        width: 42.5rem;
+      }
+
+      @include desktop {
+        width: 45.3rem;
+      }
+    }
+
+    &__name,
+    &__company,
+    &__text,
+    &__email {
+      margin: 0;
+      font-size: $fs-mob-sm;
+      line-height: $lh-xs;
+      font-weight: 300;
+
+      @include tablet {
+        font-size: $fs-med;
+        line-height: $lh-sm;
+      }
+    }
+
+    &__name,
+    &__company {
+      color: $main-lt;
+      font-weight: 600;
+
+      @include tablet {
+        font-weight: 600;
+      }
+    }
+
+    &__email-link {
+      text-decoration: none;
+      color: $main-lt;
+    }
+
+    &__text--top {
+      margin-top: 1rem;
+
+      @include tablet {
+        margin-top: 1.5rem;
+      }
     }
   }
 
-
-  &__group {
+  .footer__branding {
+    margin-top: 2rem;
     display: flex;
-    flex-direction: row;
-    margin-bottom: 1.5rem;
-    width: 7.5rem;
-    justify-content: space-between;
 
     @include tablet {
-      margin-bottom: 0;
-      margin-top: 3.8rem;
-      margin-left: 2.25rem;
-      padding: 0;
-
-    }
-  }
-
-
-  &__icon {
-    @include tablet {
-      width: 110%;
-    }
-  }
-}
-
-
-.contact {
-  @include tablet {
-    order: 3;
-    flex-basis: 100%;
-  }
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-
-    @include tablet {
-      flex-direction: row;
-      justify-content: space-between;
-      margin-top: 0;
-      width: 42.5rem;
+      order: 2;
+      position: absolute;
+      top: 0;
+      right: 2.25rem;
     }
 
     @include desktop {
-        width: 45.3rem;
+      right: 7.75rem;
+    }
+
+    &-logo {
+      height: 1.25rem;
+      width: 7.5rem;
     }
   }
 
-  &__name,
-  &__company,
-  &__text,
-  &__email {
-    margin: 0;
-    font-size: $fs-mob-sm;
-    line-height: $lh-xs;
-    font-weight: 300;
-
+  .copyright {
     @include tablet {
-      font-size: $fs-med;
-      line-height: $lh-sm;
+      order: 4;
+    }
+
+    &__text {
+      margin: 1rem 0;
+      padding-bottom: 1rem;
+      font-size: $fs-mob-xs;
+      letter-spacing: 0.025rem;
+      line-height: $lh-xs;
+      font-weight: 300;
+
+      @include tablet {
+        font-size: $fs-med;
+        line-height: $lh-sm;
+        margin: 2.75rem 0;
+      }
     }
   }
-
-  &__name,
-  &__company {
-    color: $main-lt;
-    font-weight: 600;
-
-    @include tablet {
-      font-weight: 600;
-    }
-  }
-
-  &__email-link {
-    text-decoration: none;
-    color: $main-lt;
-  }
-
-  &__text--top {
-    margin-top: 1rem;
-
-    @include tablet {
-      margin-top: 1.5rem;
-    }
-  }
-}
-
-.footer__branding {
-  margin-top: 2rem;
-  display: flex;
-
-  @include tablet {
-    order: 2;
-    position: absolute;
-    top: 0;
-    right: 2.25rem;
-  }
-
-  @include desktop {
-    right: 7.75rem;
-  }
-
-  &-logo {
-    height: 1.25rem;
-    width: 7.5rem;
-  }
-}
-
-.copyright {
-  @include tablet {
-    order: 4;
-  }
-
-  &__text {
-    margin: 1rem 0;
-    padding-bottom: 1rem;
-    font-size: $fs-mob-xs;
-    letter-spacing: 0.025rem;
-    line-height: $lh-xs;
-    font-weight: 300;
-
-    @include tablet {
-      font-size: $fs-med;
-      line-height: $lh-sm;
-      margin: 2.75rem 0;
-    }
-  }
-}
 }

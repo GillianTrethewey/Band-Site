@@ -81,12 +81,13 @@ const generateTable = (data) => {
   dateData.classList.add("show__date");
   venueHeading.classList.add("show__heading");
   venueData.classList.add("show__venue");
-  venueData.classList.add("show__venue");
+  venueHeading.classList.add("show__heading");
   locationHeading.classList.add("show__heading");
   locationData.classList.add("show__location");
 
   dateHeading.innerText = "DATE";
   dateData.innerText = data["date"];
+  venueHeading.innerText = "VENUE";
   venueData.innerText = data["venue"];
   locationHeading.innerText = "LOCATION";
   locationData.innerText = data["location"];
