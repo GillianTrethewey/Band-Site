@@ -59,8 +59,6 @@ const displayComment = (comment) => {
   commentDate.classList.add("comment__date");
   commentDate.innerText = comment["date"];
   commentNameDateContainer.appendChild(commentDate);
-  console.log(commentDate.outerHTML);
-  
 
   let commentText = document.createElement("p");
   commentText.classList.add("comment__text");
@@ -124,11 +122,9 @@ commentsForm.addEventListener("submit", (e) => {
       date: currDate,
       comment: e.target.comment.value,
     };
-    console.log('this is the new object', newCommentObj);
-    console.log('type of data', typeof(currDate));
 
     comments.unshift(newCommentObj);
-  console.log('this is the comments array', comments);
+
     comments.innerText = "";
     commentsList.innerText = "";
 

@@ -39,7 +39,6 @@ let shows = [
 let showsTable = document.querySelector(".shows__table");
 
 const generateHeaderTablet = (data) => {
-
   let tabletHeader = document.createElement("div");
   tabletHeader.classList.add("tablet__header");
 
@@ -62,10 +61,10 @@ const generateHeaderTablet = (data) => {
   buttonElement.innerText = "BUY TICKETS";
   buttonElement.classList.add("show__button");
   buttonElement.classList.add("show__button--placeholder");
- tabletHeader.appendChild(buttonElement);
+  tabletHeader.appendChild(buttonElement);
 
- showsTable.appendChild(tabletHeader);
-}
+  showsTable.appendChild(tabletHeader);
+};
 
 const generateTable = (data) => {
   let showCard = document.createElement("div");
@@ -99,17 +98,17 @@ const generateTable = (data) => {
   showCard.appendChild(locationHeading);
   showCard.appendChild(locationData);
 
-// use mousedown and mouseup to improve speed of rendering vs click
+  // use mousedown and mouseup to improve speed of rendering vs click
 
   showCard.addEventListener("mousedown", () => {
     showCard.classList.add("show__card--active");
     showCard.classList.remove("show__card--hover");
     showCard.classList.remove("show__card--nohover");
   });
-  
+
   showCard.addEventListener("mouseup", () => {
     const activeShowCards = document.querySelectorAll(".show__card");
-  
+
     activeShowCards.forEach((show) => {
       if (show !== showCard) {
         show.classList.remove("show__card--active");
@@ -117,7 +116,6 @@ const generateTable = (data) => {
       }
     });
   });
-  
 
   showsTable.appendChild(showCard);
 
@@ -127,8 +125,6 @@ const generateTable = (data) => {
   showCard.appendChild(buttonElement);
 };
 
-const obj = {date: 'DATE', venue: 'VENUE', location: 'LOCATION'}
+const obj = { date: "DATE", venue: "VENUE", location: "LOCATION" };
 generateHeaderTablet(obj);
 shows.map((e) => generateTable(e));
-
-
