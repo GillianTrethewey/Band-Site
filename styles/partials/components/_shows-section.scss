@@ -16,6 +16,7 @@
   }
 
   &__container {
+
     @include desktop {
       display: flex;
       justify-content: flex-end;
@@ -58,6 +59,7 @@
 
   &__card {
     border-bottom: 1px solid $sec-med;
+    padding: 1rem;
 
     @include tablet {
       display: flex;
@@ -65,6 +67,7 @@
       align-items: center;
       padding-bottom: 0.5rem;
       padding-top: 0.5rem;
+      flex-grow: 1;
       }
 
       &--active {
@@ -73,7 +76,12 @@
 
     &:hover {
       background-color: $sec-lt;
-      transition: 0.7s;
+    }
+    &--nohover {
+      pointer-events:none;
+    }
+    &--hover {
+      pointer-events: all;
     }
   }
 
@@ -96,28 +104,18 @@
     margin-bottom: 1rem;
 
     @include tablet {
-      width: 33.3333%;
       font-size: $fs-med;
+      width: 33.3333333%;
     }
   }
 
   &__date {
     font-weight: 600;
-    @include tablet {
-      width: 30%;
-    }
-
-    @include desktop {
-      width: 30%;
-    }
   }
+
   &__venue,
   &__location {
     font-weight: 300;
-
-    @include tablet {
-      width: 20%;
-    }
   }
 
   &__button {
@@ -127,19 +125,23 @@
     font-weight: 600;
     font-size: 1rem;
     border-radius: 4px;
+    min-width: 9.4rem;
     width: 100%;
-    border: none;
+    border: 0;
     font-weight: 300;
 
     @include tablet {
       width: fit-content;
-      font-size: 0.875rem;
+      font-size: 0.82rem;
       padding-left: 2rem;
       padding-right: 2rem;
     }
 
     @include desktop {
-      font-size: 0.9rem;
+    }
+
+    &--placeholder {
+      visibility: hidden;
     }
 
     &:hover {
@@ -156,9 +158,9 @@
 
     @include tablet {
       display: flex;
+      justify-content: space-between;
       color: $main-med;
       font-weight: 600;
-      width: 80%;
     }
   }
 
@@ -166,22 +168,14 @@
   &__venue,
   &__location {
     @include tablet {
-      width: 40%;
       font-size: 0.75rem;
       font-weight: 300;
-    }
-
-    @include desktop {
+      width: 33.3333333%;
     }
   }
 
   &__date {
-    @include tablet {
-      width: 55%;
-    }
-
-    @include desktop {
-      width: 56%;
-    }
+    padding-left: 1rem;
   }
 }
+

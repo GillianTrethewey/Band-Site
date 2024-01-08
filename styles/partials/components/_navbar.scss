@@ -4,15 +4,14 @@
 
 .nav {
   width: 100%;
-
-  @include tablet {
-  }
+  margin: 0;
+  padding: 0;
 
   &__list {
     display: flex;
     justify-content: space-around;
-    margin-left: -3.75rem;
     margin-top: 0.5rem;
+    padding: 0;
 
     @include tablet {
       margin-left: 0;
@@ -83,8 +82,8 @@
     }
 
     &--active:after {
+      width:100%;
       content: "";
-      width: 100%;
       border-bottom: 3px solid $main-lt;
       position: absolute;
       top: 4.5rem;
@@ -96,7 +95,16 @@
     }
 
     &--shows:after {
+      width:50%;
+      content: "";
+      border-bottom: 3px solid $main-lt;
+      position: absolute;
+      top: 4.5rem;
       left: 50%;
+
+      @include tablet {
+        width: 0%;
+      }
     }
   }
 }

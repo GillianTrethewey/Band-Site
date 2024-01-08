@@ -6,32 +6,31 @@
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
   background-repeat: none;
-  background-position: 50% 20%;
+  background-position: 50% 30%;
   box-shadow: inset 0 0 0 100vmax $main-dk-opacity;
-  height: 11.6rem;
+  height: 63vw;
+  max-height: 140vh;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
 
   @include tablet {
-    height: 60vw;
-    max-height: 68vh;
+    height: 62vw;
+    max-height: 150vh;
   }
 
   @include desktop {
-    height: 45vw;
+    height: 49vw;
     max-height: 70vh;
   }
-
 
   &__title {
     font-size: $fs-mob-lg;
     line-height: 2rem;
     font-weight: 600;
     color: $main-lt;
-    margin: 0;
-    margin-left: 1rem;
+    margin: 0.5rem 0 0 1rem;
 
     @include tablet {
       font-size: $fs-xxl;

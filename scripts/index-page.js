@@ -61,6 +61,7 @@ const displayComment = (comment) => {
   commentNameDateContainer.appendChild(commentDate);
 
   let commentText = document.createElement("p");
+  commentText.classList.add("comment__text");
   commentText.innerText = comment["comment"];
   commentContainer.appendChild(commentText);
 
@@ -91,7 +92,6 @@ let shouldValidate = false;
 let isFormValid = false;
 
 const validateInputs = () => {
-
   if (!shouldValidate) return;
 
   isFormValid = true;
@@ -111,7 +111,6 @@ commentsForm.addEventListener("submit", (e) => {
   shouldValidate = true;
   validateInputs();
   if (isFormValid) {
-
     let newDate = new Date();
     let month = (newDate.getMonth() + 1).toString().padStart(2, "0");
     let date = newDate.getDate().toString().padStart(2, "0");

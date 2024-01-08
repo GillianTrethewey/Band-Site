@@ -38,26 +38,34 @@ let shows = [
 
 let showsTable = document.querySelector(".shows__table");
 
-// displays at tablet and above
-let tabletHeader = document.createElement("div");
-tabletHeader.classList.add("tablet__header");
+const generateHeaderTablet = (data) => {
 
-let headerDate = document.createElement("p");
-headerDate.innerText = "DATE";
-headerDate.classList.add("tablet__date");
-tabletHeader.appendChild(headerDate);
+  let tabletHeader = document.createElement("div");
+  tabletHeader.classList.add("tablet__header");
 
-let headerVenue = document.createElement("p");
-headerVenue.innerText = "VENUE";
-headerVenue.classList.add("tablet__venue");
-tabletHeader.appendChild(headerVenue);
+  let headerDate = document.createElement("p");
+  headerDate.innerText = "DATE";
+  headerDate.classList.add("tablet__date");
+  tabletHeader.appendChild(headerDate);
 
-let headerLocation = document.createElement("p");
-headerLocation.innerText = "LOCATION";
-headerLocation.classList.add("tablet__location");
-tabletHeader.appendChild(headerLocation);
+  let headerVenue = document.createElement("p");
+  headerVenue.innerText = "VENUE";
+  headerVenue.classList.add("tablet__venue");
+  tabletHeader.appendChild(headerVenue);
 
-showsTable.appendChild(tabletHeader);
+  let headerLocation = document.createElement("p");
+  headerLocation.innerText = "LOCATION";
+  headerLocation.classList.add("tablet__location");
+  tabletHeader.appendChild(headerLocation);
+
+  let buttonElement = document.createElement("button");
+  buttonElement.innerText = "BUY TICKETS";
+  buttonElement.classList.add("show__button");
+  buttonElement.classList.add("show__button--placeholder");
+ tabletHeader.appendChild(buttonElement);
+
+ showsTable.appendChild(tabletHeader);
+}
 
 const generateTable = (data) => {
   let showCard = document.createElement("div");
@@ -90,17 +98,25 @@ const generateTable = (data) => {
   showCard.appendChild(locationHeading);
   showCard.appendChild(locationData);
 
-  // styling for click event on shows row
+// use mousedown and mouseup to improve speed of rendering vs click
 
-  showCard.addEventListener("click", (e) => {
-    const activeShowCards = document.querySelectorAll(".show__card");
-
-    activeShowCards.forEach((show) => {
-      show.classList.remove("show__card--active");
-    });
-
+  showCard.addEventListener("mousedown", () => {
     showCard.classList.add("show__card--active");
+    showCard.classList.remove("show__card--hover");
+    showCard.classList.remove("show__card--nohover");
   });
+  
+  showCard.addEventListener("mouseup", () => {
+    const activeShowCards = document.querySelectorAll(".show__card");
+  
+    activeShowCards.forEach((show) => {
+      if (show !== showCard) {
+        show.classList.remove("show__card--active");
+        show.classList.add("show__card--hover");
+      }
+    });
+  });
+  
 
   showsTable.appendChild(showCard);
 
@@ -110,5 +126,8 @@ const generateTable = (data) => {
   showCard.appendChild(buttonElement);
 };
 
-shows.map((show) => generateTable(show));
+const obj = {date: 'DATE', venue: 'VENUE', location: 'LOCATION'}
+generateHeaderTablet(obj);
+shows.map((e) => generateTable(e));
+
 

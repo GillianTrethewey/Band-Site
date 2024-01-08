@@ -6,7 +6,6 @@
   background-image: url("../assets/images/hero-shows.jpg");
   background-size: cover;
   background-repeat: none;
-  background-position: 50% 30%;
   box-shadow: inset 0 0 0 100vmax $main-dk-opacity;
   margin: 0;
   padding: 0;
@@ -49,7 +48,6 @@
     width: 80%;
 
     @include tablet {
-      width: 80%;
     }
 
     @include desktop {
@@ -97,10 +95,11 @@
 
 .iframe {
   height: 7rem;
-  max-width: 25rem;
+  max-width: 20rem;
 
   @include mid-gallery {
     height: 7rem;
+    max-width: 25rem;
   }
 
   @include tablet {
@@ -108,7 +107,6 @@
   }
 
   &__container {
-    width: 100%;
 
     @include tablet {
       width: 60%;
