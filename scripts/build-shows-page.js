@@ -1,42 +1,62 @@
-let shows = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
 
 let showsTable = document.querySelector(".shows__table");
+const api = new BandSiteApi("bf62226c-3d12-401b-ab50-b43718267b8d");
+
+const buildShowsPage = async () => {
+  try {
+    const shows = await api.getShows();
+    console.log('Shows data in build-shows-page.js: ', shows);
+
+    const obj = { date: "DATE", venue: "VENUE", location: "LOCATION" };
+    generateHeaderTablet(obj);
+    shows.map((e) => generateTable(e));
+
+  } catch (error) {
+    console.log('Error in build-shows-page.js: ', error);
+  }
+  };
+
+buildShowsPage();
+
+// let shows = [
+//   {
+//     date: "Mon Sept 06 2021",
+//     venue: "Ronald Lane",
+//     location: "San Francisco, CA",
+//   },
+
+//   {
+//     date: "Tue Sept 21 2021",
+//     venue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+
+//   {
+//     date: "Fri Oct 15 2021",
+//     venue: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+
+//   {
+//     date: "Sat Nov 06 2021",
+//     venue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+
+//   {
+//     date: "Fri Nov 26 2021",
+//     venue: "Moscow Center",
+//     location: "San Francisco, CA",
+//   },
+
+//   {
+//     date: "Wed Dec 15 2021",
+//     venue: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
+
+//let showsTable = document.querySelector(".shows__table");
 
 const generateHeaderTablet = (data) => {
   let tabletHeader = document.createElement("div");
@@ -66,6 +86,7 @@ const generateHeaderTablet = (data) => {
   showsTable.appendChild(tabletHeader);
 };
 
+
 const generateTable = (data) => {
   let showCard = document.createElement("div");
   let dateHeading = document.createElement("h3");
@@ -84,12 +105,16 @@ const generateTable = (data) => {
   locationHeading.classList.add("show__heading");
   locationData.classList.add("show__location");
 
+  // const time = data.date;
+  // const date = new Date(time);
+  // const formattedDate = date.toDateString();
+
   dateHeading.innerText = "DATE";
-  dateData.innerText = data["date"];
+  dateData.innerText = new Date(data.date).toDateString();
   venueHeading.innerText = "VENUE";
-  venueData.innerText = data["venue"];
+  venueData.innerText = data.place;
   locationHeading.innerText = "LOCATION";
-  locationData.innerText = data["location"];
+  locationData.innerText = data.location;
 
   showCard.appendChild(dateHeading);
   showCard.appendChild(dateData);
@@ -125,6 +150,8 @@ const generateTable = (data) => {
   showCard.appendChild(buttonElement);
 };
 
-const obj = { date: "DATE", venue: "VENUE", location: "LOCATION" };
-generateHeaderTablet(obj);
-shows.map((e) => generateTable(e));
+// const obj = { date: "DATE", venue: "VENUE", location: "LOCATION" };
+// generateHeaderTablet(obj);
+// shows.map((e) => generateTable(e));
+
+
