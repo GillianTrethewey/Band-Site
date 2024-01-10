@@ -23,12 +23,13 @@
     line-height: $lh-lg;
     font-weight: 600;
     padding-top: 1.5rem;
-    margin-top: 0;
+    margin: 0;
+    margin-bottom: 1rem;
 
     @include tablet {
       font-size: $fs-xl;
       line-height: $lh-xl;
-      padding-top: 3rem;
+      padding-top: 2.25rem;
     }
 
     @include desktop {

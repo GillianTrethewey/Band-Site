@@ -145,7 +145,7 @@ td {
   width: 100%;
   border-bottom: 3px solid #fff;
   position: absolute;
-  top: 4.5rem;
+  top: 4.3rem;
   right: 0;
 }
 @media screen and (min-width: 48rem) {
@@ -177,7 +177,7 @@ td {
   content: "";
   border-bottom: 3px solid #fff;
   position: absolute;
-  top: 4.5rem;
+  top: 4.3rem;
   right: 50%;
 }
 @media screen and (min-width: 48rem) {
@@ -190,7 +190,7 @@ td {
   content: "";
   border-bottom: 3px solid #fff;
   position: absolute;
-  top: 4.5rem;
+  top: 4.3rem;
   left: 50%;
 }
 @media screen and (min-width: 48rem) {
@@ -203,6 +203,7 @@ td {
   background-image: url("../assets/images/hero-shows.jpg");
   background-size: cover;
   background-repeat: none;
+  background-position: 50% 30%;
   box-shadow: inset 0 0 0 100vmax rgba(50, 50, 50, 0.5019607843);
   margin: 0;
   padding: 0;
@@ -219,8 +220,9 @@ td {
 @media screen and (min-width: 80rem) {
   .hero-shows {
     padding: 7.75rem 7.75rem 9rem 7.75rem;
-    height: 45vw;
-    max-height: 70vh;
+    height: 60vw;
+    max-height: 80vh;
+    justify-content: center;
   }
 }
 .hero-shows__container {
@@ -243,12 +245,14 @@ td {
 @media screen and (min-width: 80rem) {
   .copy__container {
     width: 48%;
+    justify-content: center;
   }
 }
 .copy__byline {
   font-size: 0.8125rem;
   line-height: 2rem;
   margin: 0;
+  margin-bottom: 0.5rem;
   padding: 0;
 }
 @media screen and (min-width: 48rem) {
@@ -256,13 +260,13 @@ td {
     font-size: 1.5rem;
     line-height: 1.375rem;
     font-weight: 300;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     padding-top: 0.5rem;
   }
 }
 @media screen and (min-width: 80rem) {
   .copy__byline {
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 1.1px;
@@ -283,10 +287,14 @@ td {
     margin-bottom: 3rem;
   }
 }
+@media screen and (min-width: 80rem) {
+  .copy__title {
+    margin-bottom: 2rem;
+  }
+}
 
 .iframe {
   height: 7rem;
-  max-width: 20rem;
 }
 @media screen and (min-width: 45rem) {
   .iframe {
@@ -298,6 +306,9 @@ td {
   .iframe {
     height: 8.7rem;
   }
+}
+.iframe__container {
+  width: 100%;
 }
 @media screen and (min-width: 48rem) {
   .iframe__container {
@@ -381,7 +392,8 @@ td {
 .footer .socials__group {
   display: flex;
   flex-direction: row;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;
   width: 7.5rem;
   justify-content: space-between;
 }
@@ -413,12 +425,19 @@ td {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 0;
-    width: 42.5rem;
   }
 }
 @media screen and (min-width: 80rem) {
   .footer .contact__container {
-    width: 45.3rem;
+    justify-content: flex-start;
+  }
+}
+.footer .contact__details {
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 80rem) {
+  .footer .contact__details {
+    padding-right: 5rem;
   }
 }
 .footer .contact__name, .footer .contact__company, .footer .contact__text, .footer .contact__email {
@@ -482,7 +501,6 @@ td {
 }
 .footer .copyright__text {
   margin: 1rem 0;
-  padding-bottom: 1rem;
   font-size: 0.625rem;
   letter-spacing: 0.025rem;
   line-height: 1.125rem;
@@ -497,11 +515,11 @@ td {
 }
 
 .shows {
-  padding: 1rem;
+  padding: 1rem 0;
 }
 @media screen and (min-width: 48rem) {
   .shows {
-    padding: 2.25rem;
+    padding: 0 2.25rem;
   }
 }
 @media screen and (min-width: 80rem) {
@@ -509,6 +527,7 @@ td {
     padding: 3rem 7.75rem 2rem 7.75rem;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
   }
 }
 @media screen and (min-width: 80rem) {
@@ -519,7 +538,6 @@ td {
   }
 }
 .shows__table {
-  margin-top: 1.875rem;
   width: 100%;
 }
 @media screen and (min-width: 48rem) {
@@ -533,20 +551,25 @@ td {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
-  padding-top: 1.5rem;
-  margin: 0;
-  margin-left: 1rem;
+  margin: 1.5rem 1rem 0 1rem;
 }
 @media screen and (min-width: 48rem) {
   .shows__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
-    padding-top: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
   }
 }
+@media screen and (min-width: 80rem) {
+  .shows__title {
+    margin-top: 0;
+  }
+}
+
 .show__card {
   border-bottom: 1px solid #e1e1e1;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 @media screen and (min-width: 48rem) {
   .show__card {
@@ -574,7 +597,7 @@ td {
   color: #afafaf;
   font-weight: 600;
   font-size: 0.625rem;
-  line-height: 0.5rem;
+  margin-top: 1.25rem;
 }
 @media screen and (min-width: 48rem) {
   .show__heading {
@@ -584,7 +607,7 @@ td {
 .show__date, .show__venue, .show__location {
   color: #323232;
   font-size: 0.8125rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 @media screen and (min-width: 48rem) {
   .show__date, .show__venue, .show__location {
@@ -594,11 +617,12 @@ td {
 }
 .show__date {
   font-weight: 600;
-  margin: 0;
-  padding: 0;
 }
 .show__venue, .show__location {
   font-weight: 300;
+}
+.show__location {
+  margin-bottom: 1.25rem;
 }
 .show__button {
   height: 2.6rem;

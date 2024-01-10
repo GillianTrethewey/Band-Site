@@ -68,11 +68,11 @@ const generateHeaderTablet = (data) => {
 
 const generateTable = (data) => {
   let showCard = document.createElement("div");
-  let dateHeading = document.createElement("p");
-  let dateData = document.createElement("h3");
-  let venueHeading = document.createElement("p");
+  let dateHeading = document.createElement("h3");
+  let dateData = document.createElement("p");
+  let venueHeading = document.createElement("h3");
   let venueData = document.createElement("p");
-  let locationHeading = document.createElement("p");
+  let locationHeading = document.createElement("h3");
   let locationData = document.createElement("p");
 
   showCard.classList.add("show__card");
