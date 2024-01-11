@@ -110,7 +110,7 @@
 
   &__input {
     border: 1px solid $sec-med;
-    border-radius: 3px;
+    border-radius: 4px;
     width: 100%;
     height: 2.5rem;
     line-height: 2rem;
@@ -118,11 +118,18 @@
     margin-bottom: 0.75rem;
     background-color: $sec-lt;
     color: $main-dk;
+    font-size: 0.8rem;
+    font-family: "Avenir", sans-serif;
+    font-weight: 300;
 
     @include tablet {
       height: 3rem;
       font-size: 1rem;
       padding: 1rem;
+    }
+
+    @include desktop {
+      font-size: 0.8rem;
     }
 
     &:focus {
@@ -136,7 +143,7 @@
 
     &::placeholder {
       color: $main-dk;
-      font-family: "Avenir";
+      font-family: "Avenir", sans-serif;
       font-weight: 300;
       font-size: 0.8rem;
 
@@ -160,14 +167,19 @@
     padding-left: 0.75rem;
     margin-bottom: 0.75rem;
     color: $main-dk;
+    font-family: "Avenir", sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: $main-dk;
 
     @include tablet {
-      height: 5rem
+      height: 5rem;
+      font-size: 1rem;
     }
 
     @include desktop {
       height: 6rem;
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
 
     &:focus {
@@ -204,8 +216,6 @@
       display: flex;
       border-bottom: 1px solid $sec-med;
       width: 100%;
-      
-
     }
   }
 

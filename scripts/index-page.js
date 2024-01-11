@@ -2,12 +2,24 @@ const commentsForm = document.querySelector(".comment__form");
 let commentsList = document.querySelector(".comments__list");
 const api = new BandSiteApi("bf62226c-3d12-401b-ab50-b43718267b8d");
 
+const renderSortedComments = async () => {
+  try {
+    const databaseComments = await api.getComments();
+    const sortedComments = [...databaseComments].sort(
+      (a, b) => b.timestamp - a.timestamp
+    );
+
+    sortedComments.forEach((comment) => {
+      displayComment(comment);
+    });
+  } catch(error) {
+    console.log('render sorted comments failed: ', error);
+  }
+}
+
 const buildCommentsPage = async () => {
   try {
-    const comments = await api.getComments();
-    console.log("Shows data in build-shows-page.js: ", comments);
-
-    comments.forEach((comment) => displayComment(comment));
+    renderSortedComments();
 
     let nameInput = document.querySelector("input[name='name']");
     let commentInput = document.querySelector("textarea[name='comment']");
@@ -16,11 +28,6 @@ const buildCommentsPage = async () => {
     commentInput.isValid = () => !!commentInput.value;
 
     const inputFields = [nameInput, commentInput];
-
-    const isValidText = (text) => {
-      const re = /[\s\S]*[\w\W]*[\d\D]*/;
-      return re.test(String(text)).toLowerCase();
-    };
 
     let shouldValidate = false;
     let isFormValid = false;
@@ -46,25 +53,20 @@ const buildCommentsPage = async () => {
       validateInputs();
       if (isFormValid) {
         try {
-          let newDate = new Date();
-          let month = (newDate.getMonth() + 1).toString().padStart(2, "0");
-          let date = newDate.getDate().toString().padStart(2, "0");
-          let year = newDate.getFullYear().toString();
-          let currDate = `${month}/${date}/${year}`;
-
           newCommentObj = {
             name: e.target.name.value,
-            date: currDate,
             comment: e.target.comment.value,
           };
-          console.log(newCommentObj, "newCommentObj");
 
-          const updatedComment = await api.postComment(newCommentObj);
-          console.log(updatedComment);
-          const comments = await api.getComments();
-          console.log("Shows data in index-page.js: ", comments);
+          await api.postComment(newCommentObj);
+          const databaseComments = await api.getComments();
+          const sortedComments = [...databaseComments].sort(
+            (a, b) => b.timestamp - a.timestamp
+          );
 
-          comments.forEach((comment) => displayComment(comment));
+          sortedComments.forEach((comment) => {
+            displayComment(comment);
+          });
         } catch (error) {
           console.log("comment update failed: ", error);
         }
@@ -72,10 +74,8 @@ const buildCommentsPage = async () => {
         comments.innerText = "";
         commentsList.innerText = "";
 
-        comments.forEach((comment) => displayComment(comment));
-
         e.target.reset();
-        return newCommentObj;
+        return;
       }
     });
 
@@ -90,6 +90,12 @@ const buildCommentsPage = async () => {
 buildCommentsPage();
 
 const displayComment = (comment) => {
+  let newDate = new Date(comment.timestamp);
+  let month = (newDate.getMonth() + 1).toString().padStart(2, "0");
+  let date = newDate.getDate().toString().padStart(2, "0");
+  let year = newDate.getFullYear().toString();
+  let currDate = `${month}/${date}/${year}`;
+
   let commentCard = document.createElement("div");
   commentCard.classList.add("comment-card");
 
@@ -121,7 +127,7 @@ const displayComment = (comment) => {
 
   let commentDate = document.createElement("p");
   commentDate.classList.add("comment__date");
-  commentDate.innerText = comment["date"];
+  commentDate.innerText = currDate;
   commentNameDateContainer.appendChild(commentDate);
 
   let commentText = document.createElement("p");
@@ -132,66 +138,3 @@ const displayComment = (comment) => {
   commentCard.appendChild(commentGroup);
   commentsList.appendChild(commentCard);
 };
-
-// comments.forEach((comment) => displayComment(comment));
-
-// let nameInput = document.querySelector("input[name='name']");
-// let commentInput = document.querySelector("textarea[name='comment']");
-
-// nameInput.isValid = () => !!nameInput.value;
-// commentInput.isValid = () => !!commentInput.value;
-
-// const inputFields = [nameInput, commentInput];
-
-// const isValidText = (text) => {
-//   const re = /[\s\S]*[\w\W]*[\d\D]*/;
-//   return re.test(String(text)).toLowerCase();
-// };
-
-// let shouldValidate = false;
-// let isFormValid = false;
-
-// const validateInputs = () => {
-//   if (!shouldValidate) return;
-
-//   isFormValid = true;
-
-//   inputFields.forEach((input) => {
-//     input.classList.remove("invalid");
-
-//     if (!input.isValid()) {
-//       input.classList.add("invalid");
-//       isFormValid = false;
-//     }
-//   });
-// };
-
-// commentsForm.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   shouldValidate = true;
-//   validateInputs();
-//   if (isFormValid) {
-//     let newDate = new Date();
-//     let month = (newDate.getMonth() + 1).toString().padStart(2, "0");
-//     let date = newDate.getDate().toString().padStart(2, "0");
-//     let year = newDate.getFullYear().toString();
-//     let currDate = `${month}/${date}/${year}`;
-
-//     let newCommentObj = {
-//       name: e.target.name.value,
-//       date: currDate,
-//       comment: e.target.comment.value,
-//     };
-
-//     comments.unshift(newCommentObj);
-
-//     comments.innerText = "";
-//     commentsList.innerText = "";
-
-//     comments.forEach((comment) => displayComment(comment));
-
-//     e.target.reset();
-//   }
-// });
-
-// inputFields.forEach((input) => input.addEventListener("input", validateInputs));

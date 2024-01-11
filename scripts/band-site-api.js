@@ -5,15 +5,12 @@ class BandSiteApi {
     this.apiKey = apiKey;
     this.baseUrl = "https://project-1-api.herokuapp.com/";
   }
-  describe() {
-    console.log(`${this.apiKey}, ${this.baseUrl}`);
-  }
 
   async getShows() {
     let getUrl = this.baseUrl + "showdates?api_key=" + this.apiKey;
     try {
-      const showsData = await axios.get(getUrl);
-      return showsData.data;
+      const getShowsResponse = await axios.get(getUrl);
+      return getShowsResponse.data;
     } catch (error) {
       throw error;
     }
@@ -22,21 +19,20 @@ class BandSiteApi {
   async getComments() {
     let getUrl = this.baseUrl + "comments?api_key=" + this.apiKey;
     try {
-      const commentsData = await axios.get(getUrl);
-      return commentsData.data;
+      const getCommentsResponse = await axios.get(getUrl);
+      return getCommentsResponse.data;
     } catch (error) {
       throw error;
     }
   }
 
-  async postComments(newCommentObj) {
+  async postComment(newCommentObj) {
     let postUrl = this.baseUrl + "comments?api_key=" + this.apiKey;
     try {
-        const commentsPost = await axios.post(postUrl, newCommentObj);
-        return;
-    } catch(error) {
-        throw error;
+      const postCommentResponse = await axios.post(postUrl, newCommentObj);
+      return postCommentResponse;
+    } catch (error) {
+      throw error;
     }
   }
-  }
-
+}

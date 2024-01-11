@@ -759,7 +759,7 @@ td {
 }
 .comment__input {
   border: 1px solid #e1e1e1;
-  border-radius: 3px;
+  border-radius: 4px;
   width: 100%;
   height: 2.5rem;
   line-height: 2rem;
@@ -767,12 +767,20 @@ td {
   margin-bottom: 0.75rem;
   background-color: #fafafa;
   color: #323232;
+  font-size: 0.8rem;
+  font-family: "Avenir", sans-serif;
+  font-weight: 300;
 }
 @media screen and (min-width: 48rem) {
   .comment__input {
     height: 3rem;
     font-size: 1rem;
     padding: 1rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .comment__input {
+    font-size: 0.8rem;
   }
 }
 .comment__input:focus {
@@ -784,13 +792,13 @@ td {
 }
 .comment__input::-moz-placeholder {
   color: #323232;
-  font-family: "Avenir";
+  font-family: "Avenir", sans-serif;
   font-weight: 300;
   font-size: 0.8rem;
 }
 .comment__input::placeholder {
   color: #323232;
-  font-family: "Avenir";
+  font-family: "Avenir", sans-serif;
   font-weight: 300;
   font-size: 0.8rem;
 }
@@ -820,16 +828,21 @@ td {
   padding-left: 0.75rem;
   margin-bottom: 0.75rem;
   color: #323232;
+  font-family: "Avenir", sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #323232;
 }
 @media screen and (min-width: 48rem) {
   .comment__textarea {
     height: 5rem;
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 80rem) {
   .comment__textarea {
     height: 6rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 .comment__textarea:focus {

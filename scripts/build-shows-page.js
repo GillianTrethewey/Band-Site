@@ -1,20 +1,18 @@
-
 let showsTable = document.querySelector(".shows__table");
 const api = new BandSiteApi("bf62226c-3d12-401b-ab50-b43718267b8d");
 
 const buildShowsPage = async () => {
   try {
     const shows = await api.getShows();
-    console.log('Shows data in build-shows-page.js: ', shows);
+    console.log("Shows data in build-shows-page.js: ", shows);
 
     const obj = { date: "DATE", venue: "VENUE", location: "LOCATION" };
     generateHeaderTablet(obj);
     shows.map((e) => generateTable(e));
-
   } catch (error) {
-    console.log('Error in build-shows-page.js: ', error);
+    console.log("Error in build-shows-page.js: ", error);
   }
-  };
+};
 
 buildShowsPage();
 
@@ -45,7 +43,6 @@ const generateHeaderTablet = (data) => {
 
   showsTable.appendChild(tabletHeader);
 };
-
 
 const generateTable = (data) => {
   let showCard = document.createElement("div");
@@ -105,6 +102,3 @@ const generateTable = (data) => {
   buttonElement.classList.add("show__button");
   showCard.appendChild(buttonElement);
 };
-
-
-
