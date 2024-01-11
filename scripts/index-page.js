@@ -1,29 +1,93 @@
-let comments = [
-  {
-    name: "Connor Walton",
-    date: "02/17/2021",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-
-  {
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-
-  {
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
-
-// Iterate through hard-coded comments
-
+const commentsForm = document.querySelector(".comment__form");
 let commentsList = document.querySelector(".comments__list");
+const api = new BandSiteApi("bf62226c-3d12-401b-ab50-b43718267b8d");
+
+const buildCommentsPage = async () => {
+  try {
+    const comments = await api.getComments();
+    console.log("Shows data in build-shows-page.js: ", comments);
+
+    comments.forEach((comment) => displayComment(comment));
+
+    let nameInput = document.querySelector("input[name='name']");
+    let commentInput = document.querySelector("textarea[name='comment']");
+
+    nameInput.isValid = () => !!nameInput.value;
+    commentInput.isValid = () => !!commentInput.value;
+
+    const inputFields = [nameInput, commentInput];
+
+    const isValidText = (text) => {
+      const re = /[\s\S]*[\w\W]*[\d\D]*/;
+      return re.test(String(text)).toLowerCase();
+    };
+
+    let shouldValidate = false;
+    let isFormValid = false;
+
+    const validateInputs = () => {
+      if (!shouldValidate) return;
+
+      isFormValid = true;
+
+      inputFields.forEach((input) => {
+        input.classList.remove("invalid");
+
+        if (!input.isValid()) {
+          input.classList.add("invalid");
+          isFormValid = false;
+        }
+      });
+    };
+
+    commentsForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      shouldValidate = true;
+      validateInputs();
+      if (isFormValid) {
+        try {
+          let newDate = new Date();
+          let month = (newDate.getMonth() + 1).toString().padStart(2, "0");
+          let date = newDate.getDate().toString().padStart(2, "0");
+          let year = newDate.getFullYear().toString();
+          let currDate = `${month}/${date}/${year}`;
+
+          newCommentObj = {
+            name: e.target.name.value,
+            date: currDate,
+            comment: e.target.comment.value,
+          };
+          console.log(newCommentObj, "newCommentObj");
+
+          const updatedComment = await api.postComment(newCommentObj);
+          console.log(updatedComment);
+          const comments = await api.getComments();
+          console.log("Shows data in index-page.js: ", comments);
+
+          comments.forEach((comment) => displayComment(comment));
+        } catch (error) {
+          console.log("comment update failed: ", error);
+        }
+
+        comments.innerText = "";
+        commentsList.innerText = "";
+
+        comments.forEach((comment) => displayComment(comment));
+
+        e.target.reset();
+        return newCommentObj;
+      }
+    });
+
+    inputFields.forEach((input) =>
+      input.addEventListener("input", validateInputs)
+    );
+  } catch (error) {
+    console.log("Error in build-shows-page.js: ", error);
+  }
+};
+
+buildCommentsPage();
 
 const displayComment = (comment) => {
   let commentCard = document.createElement("div");
@@ -69,69 +133,65 @@ const displayComment = (comment) => {
   commentsList.appendChild(commentCard);
 };
 
-comments.forEach((comment) => displayComment(comment));
+// comments.forEach((comment) => displayComment(comment));
 
-const commentsForm = document.querySelector(".comment__form");
+// let nameInput = document.querySelector("input[name='name']");
+// let commentInput = document.querySelector("textarea[name='comment']");
 
-// input and form validation
-// add listeners on input and textarea fields
-let nameInput = document.querySelector("input[name='name']");
-let commentInput = document.querySelector("textarea[name='comment']");
+// nameInput.isValid = () => !!nameInput.value;
+// commentInput.isValid = () => !!commentInput.value;
 
-nameInput.isValid = () => !!nameInput.value;
-commentInput.isValid = () => !!commentInput.value;
+// const inputFields = [nameInput, commentInput];
 
-const inputFields = [nameInput, commentInput];
+// const isValidText = (text) => {
+//   const re = /[\s\S]*[\w\W]*[\d\D]*/;
+//   return re.test(String(text)).toLowerCase();
+// };
 
-const isValidText = (text) => {
-  const re = /[\s\S]*[\w\W]*[\d\D]*/;
-  return re.test(String(text)).toLowerCase();
-};
+// let shouldValidate = false;
+// let isFormValid = false;
 
-let shouldValidate = false;
-let isFormValid = false;
+// const validateInputs = () => {
+//   if (!shouldValidate) return;
 
-const validateInputs = () => {
-  if (!shouldValidate) return;
+//   isFormValid = true;
 
-  isFormValid = true;
+//   inputFields.forEach((input) => {
+//     input.classList.remove("invalid");
 
-  inputFields.forEach((input) => {
-    input.classList.remove("invalid");
+//     if (!input.isValid()) {
+//       input.classList.add("invalid");
+//       isFormValid = false;
+//     }
+//   });
+// };
 
-    if (!input.isValid()) {
-      input.classList.add("invalid");
-      isFormValid = false;
-    }
-  });
-};
+// commentsForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   shouldValidate = true;
+//   validateInputs();
+//   if (isFormValid) {
+//     let newDate = new Date();
+//     let month = (newDate.getMonth() + 1).toString().padStart(2, "0");
+//     let date = newDate.getDate().toString().padStart(2, "0");
+//     let year = newDate.getFullYear().toString();
+//     let currDate = `${month}/${date}/${year}`;
 
-commentsForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  shouldValidate = true;
-  validateInputs();
-  if (isFormValid) {
-    let newDate = new Date();
-    let month = (newDate.getMonth() + 1).toString().padStart(2, "0");
-    let date = newDate.getDate().toString().padStart(2, "0");
-    let year = newDate.getFullYear().toString();
-    let currDate = `${month}/${date}/${year}`;
+//     let newCommentObj = {
+//       name: e.target.name.value,
+//       date: currDate,
+//       comment: e.target.comment.value,
+//     };
 
-    let newCommentObj = {
-      name: e.target.name.value,
-      date: currDate,
-      comment: e.target.comment.value,
-    };
+//     comments.unshift(newCommentObj);
 
-    comments.unshift(newCommentObj);
+//     comments.innerText = "";
+//     commentsList.innerText = "";
 
-    comments.innerText = "";
-    commentsList.innerText = "";
+//     comments.forEach((comment) => displayComment(comment));
 
-    comments.forEach((comment) => displayComment(comment));
+//     e.target.reset();
+//   }
+// });
 
-    e.target.reset();
-  }
-});
-
-inputFields.forEach((input) => input.addEventListener("input", validateInputs));
+// inputFields.forEach((input) => input.addEventListener("input", validateInputs));
