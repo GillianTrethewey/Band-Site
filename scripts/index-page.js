@@ -2,7 +2,7 @@ const commentsForm = document.querySelector(".comment__form");
 let commentsList = document.querySelector(".comments__list");
 const api = new BandSiteApi("bf62226c-3d12-401b-ab50-b43718267b8d");
 
-const renderSortedComments = async () => {
+const buildCommentsPage = async () => {
   try {
     const databaseComments = await api.getComments();
     const sortedComments = [...databaseComments].sort(
@@ -12,14 +12,6 @@ const renderSortedComments = async () => {
     sortedComments.forEach((comment) => {
       displayComment(comment);
     });
-  } catch(error) {
-    console.log('render sorted comments failed: ', error);
-  }
-}
-
-const buildCommentsPage = async () => {
-  try {
-    renderSortedComments();
 
     let nameInput = document.querySelector("input[name='name']");
     let commentInput = document.querySelector("textarea[name='comment']");
@@ -58,21 +50,18 @@ const buildCommentsPage = async () => {
             comment: e.target.comment.value,
           };
 
-          await api.postComment(newCommentObj);
+          const updatedComment = await api.postComment(newCommentObj);
           const databaseComments = await api.getComments();
           const sortedComments = [...databaseComments].sort(
             (a, b) => b.timestamp - a.timestamp
           );
-
+          commentsList.innerHTML = "";
           sortedComments.forEach((comment) => {
             displayComment(comment);
           });
         } catch (error) {
           console.log("comment update failed: ", error);
-        }
-
-        comments.innerText = "";
-        commentsList.innerText = "";
+        }      
 
         e.target.reset();
         return;

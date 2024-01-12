@@ -335,7 +335,7 @@ td {
   .footer {
     padding-left: 2.25rem;
     padding-right: 2.25rem;
-    height: 400px;
+    height: 26rem;
     margin-top: 2.25rem;
   }
 }
@@ -355,24 +355,25 @@ td {
     flex-direction: row;
   }
 }
+
 @media screen and (min-width: 48rem) {
-  .footer .socials {
+  .socials {
     width: 35rem;
   }
 }
-.footer .socials__container {
+.socials__container {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 48rem) {
-  .footer .socials__container {
+  .socials__container {
     order: 1;
     flex-direction: row;
     justify-content: space-between;
     width: 23.5rem;
   }
 }
-.footer .socials__title {
+.socials__title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
@@ -381,7 +382,7 @@ td {
   padding-top: 1.5rem;
 }
 @media screen and (min-width: 48rem) {
-  .footer .socials__title {
+  .socials__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
     margin: 3rem 0 1.75rem 0;
@@ -389,7 +390,7 @@ td {
     padding: 0;
   }
 }
-.footer .socials__group {
+.socials__group {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
@@ -398,7 +399,7 @@ td {
   justify-content: space-between;
 }
 @media screen and (min-width: 48rem) {
-  .footer .socials__group {
+  .socials__group {
     margin-bottom: 0;
     margin-top: 3.8rem;
     margin-left: 2.25rem;
@@ -406,79 +407,81 @@ td {
   }
 }
 @media screen and (min-width: 48rem) {
-  .footer .socials__icon {
+  .socials__icon {
     width: 110%;
   }
 }
+
 @media screen and (min-width: 48rem) {
-  .footer .contact {
+  .contact {
     order: 3;
     flex-basis: 100%;
   }
 }
-.footer .contact__container {
+.contact__container {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 48rem) {
-  .footer .contact__container {
+  .contact__container {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 0;
   }
 }
 @media screen and (min-width: 80rem) {
-  .footer .contact__container {
+  .contact__container {
     justify-content: flex-start;
   }
 }
-.footer .contact__details {
+.contact__details {
   margin-bottom: 1rem;
 }
 @media screen and (min-width: 80rem) {
-  .footer .contact__details {
+  .contact__details {
     padding-right: 5rem;
   }
 }
-.footer .contact__name, .footer .contact__company, .footer .contact__text, .footer .contact__email {
+.contact__name, .contact__company, .contact__text, .contact__email {
   margin: 0;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 300;
 }
 @media screen and (min-width: 48rem) {
-  .footer .contact__name, .footer .contact__company, .footer .contact__text, .footer .contact__email {
+  .contact__name, .contact__company, .contact__text, .contact__email {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 }
-.footer .contact__name, .footer .contact__company {
+.contact__name, .contact__company {
   color: #fff;
   font-weight: 600;
 }
 @media screen and (min-width: 48rem) {
-  .footer .contact__name, .footer .contact__company {
+  .contact__name, .contact__company {
     font-weight: 600;
   }
 }
-.footer .contact__email-link {
+.contact__email-link {
   text-decoration: none;
   color: #fff;
 }
-.footer .contact__text--top {
+.contact__text--top {
   margin-top: 1rem;
 }
 @media screen and (min-width: 48rem) {
-  .footer .contact__text--top {
+  .contact__text--top {
     margin-top: 1.5rem;
   }
 }
-.footer .footer__branding {
+
+.footer__branding {
   margin-top: 2rem;
   display: flex;
 }
 @media screen and (min-width: 48rem) {
-  .footer .footer__branding {
+  .footer__branding {
     order: 2;
     position: absolute;
     top: 0;
@@ -486,20 +489,21 @@ td {
   }
 }
 @media screen and (min-width: 80rem) {
-  .footer .footer__branding {
+  .footer__branding {
     right: 7.75rem;
   }
 }
-.footer .footer__branding-logo {
+.footer__branding-logo {
   height: 1.25rem;
   width: 7.5rem;
 }
+
 @media screen and (min-width: 48rem) {
-  .footer .copyright {
+  .copyright {
     order: 4;
   }
 }
-.footer .copyright__text {
+.copyright__text {
   margin: 1rem 0;
   font-size: 0.625rem;
   letter-spacing: 0.025rem;
@@ -507,10 +511,10 @@ td {
   font-weight: 300;
 }
 @media screen and (min-width: 48rem) {
-  .footer .copyright__text {
+  .copyright__text {
     font-size: 0.875rem;
     line-height: 1.25rem;
-    margin: 2.75rem 0;
+    margin: 2.25rem 0 0.5rem 0;
   }
 }
 
@@ -581,9 +585,6 @@ td {
     flex-grow: 1;
   }
 }
-.show__card--active {
-  background-color: #e1e1e1;
-}
 .show__card:hover {
   background-color: #fafafa;
 }
@@ -592,6 +593,9 @@ td {
 }
 .show__card--hover {
   pointer-events: all;
+}
+.show__card--active {
+  background-color: #e1e1e1;
 }
 .show__heading {
   color: #afafaf;
