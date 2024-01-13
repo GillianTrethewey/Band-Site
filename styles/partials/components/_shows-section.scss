@@ -78,6 +78,10 @@
 
     &--active {
       background-color: $sec-med;
+      
+      &:hover {
+        background-color: $sec-med;
+      }
     }
   }
 

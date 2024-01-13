@@ -4,8 +4,7 @@ const api = new BandSiteApi("bf62226c-3d12-401b-ab50-b43718267b8d");
 const buildShowsPage = async () => {
   try {
     const shows = await api.getShows();
-    console.log("Shows data in build-shows-page.js: ", shows);
-
+    
     const obj = { date: "DATE", venue: "VENUE", location: "LOCATION" };
     generateHeaderTablet(obj);
     shows.map((e) => generateTable(e));

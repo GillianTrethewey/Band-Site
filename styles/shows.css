@@ -597,6 +597,9 @@ td {
 .show__card--active {
   background-color: #e1e1e1;
 }
+.show__card--active:hover {
+  background-color: #e1e1e1;
+}
 .show__heading {
   color: #afafaf;
   font-weight: 600;
