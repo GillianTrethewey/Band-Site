@@ -2,16 +2,48 @@ const commentsForm = document.querySelector(".comment__form");
 let commentsList = document.querySelector(".comments__list");
 const api = new BandSiteApi("bf62226c-3d12-401b-ab50-b43718267b8d");
 
+const renderComments = async () => {
+  const databaseComments = await api.getComments();
+  const sortedComments = [...databaseComments].sort(
+    (a, b) => b.timestamp - a.timestamp
+  );
+  commentsList.innerHTML = "";
+  sortedComments.forEach((comment) => {
+    displayComment(comment);
+  });
+};
+
+const commentLikeImageListener = (commentLike) => {
+  commentLike.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    let id = e.target.id;
+    try {
+      const updatedLikeComment = await api.likeComment(id);
+      renderComments();
+    } catch (error) {
+      console.log("comment like failed: ", error);
+    }
+  });
+};
+
+const deleteButtonListener = (deleteButton) => {
+  deleteButton.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    let id = e.target.id;
+    try {
+      const deleteComment = await api.deleteComment(id);
+      renderComments();
+    } catch (error) {
+      console.log("comment delete failed: ", error);
+    }
+  });
+};
+
 const buildCommentsPage = async () => {
   try {
-    const databaseComments = await api.getComments();
-    const sortedComments = [...databaseComments].sort(
-      (a, b) => b.timestamp - a.timestamp
-    );
-
-    sortedComments.forEach((comment) => {
-      displayComment(comment);
-    });
+    renderComments();
 
     let nameInput = document.querySelector("input[name='name']");
     let commentInput = document.querySelector("textarea[name='comment']");
@@ -41,6 +73,7 @@ const buildCommentsPage = async () => {
 
     commentsForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+      e.stopPropagation();
       shouldValidate = true;
       validateInputs();
       if (isFormValid) {
@@ -51,17 +84,10 @@ const buildCommentsPage = async () => {
           };
 
           const updatedComment = await api.postComment(newCommentObj);
-          const databaseComments = await api.getComments();
-          const sortedComments = [...databaseComments].sort(
-            (a, b) => b.timestamp - a.timestamp
-          );
-          commentsList.innerHTML = "";
-          sortedComments.forEach((comment) => {
-            displayComment(comment);
-          });
+          renderComments();
         } catch (error) {
           console.log("comment update failed: ", error);
-        }      
+        }
 
         e.target.reset();
         return;
@@ -123,6 +149,39 @@ const displayComment = (comment) => {
   commentText.classList.add("comment__text");
   commentText.innerText = comment["comment"];
   commentContainer.appendChild(commentText);
+
+  let commentLikeDeleteContainer = document.createElement("div");
+  commentLikeDeleteContainer.classList.add("comment__like-delete-container");
+
+  let commentLikeContainer = document.createElement("div");
+  commentLikeContainer.classList.add("comment__like-container");
+
+  let commentLikeImage = document.createElement("img");
+  commentLikeImage.classList.add("comment__like-image");
+  commentLikeImage.src = "./assets/icons/SVG/icon-like.svg";
+  commentLikeImage.alt = "thumbs up icon";
+  commentLikeImage.setAttribute("id", comment.id);
+  commentLikeContainer.appendChild(commentLikeImage);
+
+  let commentLikeCount = document.createElement("p");
+  commentLikeCount.classList.add("comment__like-count");
+  commentLikeCount.innerText = comment["likes"];
+  commentLikeCount.setAttribute("id", comment.id);
+  commentLikeContainer.appendChild(commentLikeCount);
+
+  let commentDeleteButton = document.createElement("button");
+  commentDeleteButton.classList.add("comment__button");
+  commentDeleteButton.classList.add("comment__delete-button");
+  commentDeleteButton.innerText = "DELETE";
+  commentDeleteButton.setAttribute("id", comment.id);
+
+  commentLikeDeleteContainer.appendChild(commentLikeContainer);
+  commentLikeDeleteContainer.appendChild(commentDeleteButton);
+
+  commentLikeImageListener(commentLikeImage);
+  deleteButtonListener(commentDeleteButton);
+
+  commentContainer.appendChild(commentLikeDeleteContainer);
 
   commentCard.appendChild(commentGroup);
   commentsList.appendChild(commentCard);

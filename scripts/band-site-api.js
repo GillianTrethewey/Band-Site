@@ -35,4 +35,25 @@ class BandSiteApi {
       throw error;
     }
   }
-}
+
+  async likeComment(id) {
+    let putUrl = this.baseUrl + "comments/" + id + "/like?api_key=" + this.apiKey;
+    try {
+      const putLikeResponse = await axios.put(putUrl, id);
+      return putLikeResponse;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async deleteComment(id) {
+    let deleteUrl = this.baseUrl + "comments/" + id + "?api_key=" + this.apiKey; 
+    try {
+      const deleteCommentResponse = await axios.delete(deleteUrl,id);
+      console.log(deleteCommentResponse);
+      return deleteCommentResponse;
+    } catch (error) {
+      throw error;
+    }
+  }
+  }
