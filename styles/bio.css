@@ -1039,7 +1039,7 @@ td {
   text-align: center;
 }
 .comment__delete-button:hover {
-  background-color: #AA336A;
+  background-color: #aa336a;
   cursor: pointer;
   transition: 0.5s;
 }

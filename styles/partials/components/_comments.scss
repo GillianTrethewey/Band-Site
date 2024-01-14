@@ -361,23 +361,23 @@
 
   &__delete-button {
     margin: 0;
-    padding: 0.5rem;;
+    padding: 0.5rem;
     padding: 0;
-    width: 50px;
-    height: 25px;
+    width: 3.125rem;
+    height: 1.5625rem;
     font-size: 0.6rem;
     text-align: center;
     &:hover {
-      background-color: #AA336A;
+      background-color: #aa336a;
       cursor: pointer;
       transition: 0.5s;
     }
-  
-  @include desktop {
-    padding: 0;
-    width: 75px;
-    
-  }}
+
+    @include desktop {
+      padding: 0;
+      width: 4.6875rem;
+    }
+  }
 }
 
 .invalid {
