@@ -1,6 +1,6 @@
 const apiKey = "bf62226c-3d12-401b-ab50-b43718267b8d";
 
-class BandSiteApi {
+export default class BandSiteApi {
   constructor(apiKey) {
     this.apiKey = apiKey;
     this.baseUrl = "https://project-1-api.herokuapp.com/";
@@ -17,7 +17,8 @@ class BandSiteApi {
   }
 
   async getComments() {
-    let getUrl = this.baseUrl + "comments?api_key=" + this.apiKey;
+    let getUrl =
+      "https://project-1-api.herokuapp.com/comments/?api_key=f8ca13e4-fee9-4e74-8598-bc3b89d638b4";
     try {
       const getCommentsResponse = await axios.get(getUrl);
       return getCommentsResponse.data;
@@ -27,7 +28,7 @@ class BandSiteApi {
   }
 
   async postComment(newCommentObj) {
-    let postUrl = this.baseUrl + "comments?api_key=" + this.apiKey;
+    let postUrl = this.baseUrl + "comments/?api_key=" + this.apiKey;
     try {
       const postCommentResponse = await axios.post(postUrl, newCommentObj);
       return postCommentResponse;
@@ -37,7 +38,8 @@ class BandSiteApi {
   }
 
   async likeComment(id) {
-    let putUrl = this.baseUrl + "comments/" + id + "/like?api_key=" + this.apiKey;
+    let putUrl =
+      this.baseUrl + "comments/" + id + "/like?api_key=" + this.apiKey;
     try {
       const putLikeResponse = await axios.put(putUrl, id);
       return putLikeResponse;
@@ -47,13 +49,13 @@ class BandSiteApi {
   }
 
   async deleteComment(id) {
-    let deleteUrl = this.baseUrl + "comments/" + id + "?api_key=" + this.apiKey; 
+    let deleteUrl = this.baseUrl + "comments/" + id + "?api_key=" + this.apiKey;
     try {
-      const deleteCommentResponse = await axios.delete(deleteUrl,id);
+      const deleteCommentResponse = await axios.delete(deleteUrl, id);
       console.log(deleteCommentResponse);
       return deleteCommentResponse;
     } catch (error) {
       throw error;
     }
   }
-  }
+}

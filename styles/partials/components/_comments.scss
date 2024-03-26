@@ -192,7 +192,7 @@
     }
 
     &::placeholder {
-      color: $main-dk;
+      color: $sec-dk;
       font-family: "Avenir";
       font-weight: 300;
       font-size: 0.8rem;
@@ -225,9 +225,9 @@
     margin-right: 1rem;
     width: 2.25rem;
     height: 2.25rem;
-    border-bottom: 1px solid $sec-med;
     object-fit: cover;
     background-color: $sec-med;
+    border-bottom: 1px solid $sec-med;
 
     @include tablet {
       width: 3rem;

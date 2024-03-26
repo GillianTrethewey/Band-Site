@@ -1,6 +1,8 @@
+require("./band-site-api.js")
+
 const commentsForm = document.querySelector(".comment__form");
 let commentsList = document.querySelector(".comments__list");
-const api = new BandSiteApi("bf62226c-3d12-401b-ab50-b43718267b8d");
+const api = new BandSiteApi("f8ca13e4-fee9-4e74-8598-bc3b89d638b4");
 
 const renderComments = async () => {
   const databaseComments = await api.getComments();
